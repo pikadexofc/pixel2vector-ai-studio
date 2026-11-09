@@ -1,0 +1,12 @@
+﻿name = "pixel2vector-ai-studio"
+main = "api/worker.js"
+compatibility_date = "2024-01-01"
+
+[site]
+bucket = "./"
+
+[vars]
+ENVIRONMENT = "production"
+APP_NAME = "Pixel2Vector AI Studio"
+AUTHOR = "Pickko"
+RATE_LIMIT_FREE_PER_DAY = "5"
