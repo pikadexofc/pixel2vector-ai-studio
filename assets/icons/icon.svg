@@ -1,41 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1248 1248" role="img" aria-labelledby="title desc">
-<title id="title">Visual Reconstruction</title>
-<desc id="desc">Three precise geometric planes converge into a single pixel on a royal purple and deep blue gradient.</desc>
-<defs>
- <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-  <stop offset="0" stop-color="#8B00F5"/><stop offset=".38" stop-color="#3500B5"/><stop offset=".72" stop-color="#071A9A"/><stop offset="1" stop-color="#078BFA"/>
- </linearGradient>
- <linearGradient id="white" x1="0" y1="0" x2="1" y2="1">
-  <stop offset="0" stop-color="#FFFFFF"/><stop offset=".55" stop-color="#F4F0FF"/><stop offset="1" stop-color="#B9A7FF"/>
- </linearGradient>
- <linearGradient id="top" x1="0" y1="0" x2="1" y2="1">
-  <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#B5A1FF"/>
- </linearGradient>
- <linearGradient id="mid" x1="0" y1="0" x2="1" y2="0">
-  <stop offset="0" stop-color="#F0EAFF"/><stop offset="1" stop-color="#9275F5"/>
- </linearGradient>
- <radialGradient id="shade"><stop offset=".62" stop-color="#08002B" stop-opacity="0"/><stop offset="1" stop-color="#08002B" stop-opacity=".30"/></radialGradient>
- <filter id="glow" x="-150%" y="-150%" width="400%" height="400%">
-  <feGaussianBlur stdDeviation="12" result="b"/>
-  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
- </filter>
- <clipPath id="clip"><rect width="1248" height="1248" rx="112"/></clipPath>
-</defs>
-<g clip-path="url(#clip)">
- <rect width="1248" height="1248" fill="url(#bg)"/>
- <rect width="1248" height="1248" fill="url(#shade)"/>
- <!-- Three-layer outer frame, with a true open center -->
- <path fill="url(#white)" fill-rule="evenodd" d="
-  M318 306 L846 580 L846 668 L318 944 Z
-  M426 466 L846 596 L846 652 L426 790 Z"/>
- <!-- Upper independent plane -->
- <path fill="url(#top)" d="M514 213 Q500 213 500 229 L500 351 Q500 361 510 367 L846 580 L846 476 Q846 468 839 462 L526 216 Q520 212 514 213 Z"/>
- <!-- Lower independent plane -->
- <path fill="url(#top)" d="M500 884 L846 668 L846 773 Q846 782 838 788 L519 1012 Q500 1021 500 1001 Z"/>
- <!-- Inner reconstruction plane -->
- <path fill="url(#mid)" d="M538 532 Q522 531 522 549 L522 710 Q522 727 538 726 L636 670 L636 566 Z"/>
- <!-- Central verified pixel -->
- <rect x="789" y="592" width="59" height="63" rx="5" fill="#FFFFFF" filter="url(#glow)"/>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1536" viewBox="0 0 1536 1536" role="img" aria-labelledby="title desc">
+<title id="title">HTML to Vector Converter Icon</title>
+<desc id="desc">A symmetrical code and vector pen symbol with violet Bézier arc and acid-yellow control point.</desc>
+
+<path d="M 116 87 L 81 123 L 43 178 L 16 240 L 5 282 L 3 304 L 0 306 L 0 1228 L 3 1230 L 5 1252 L 15 1292 L 31 1333 L 59 1383 L 97 1430 L 136 1465 L 186 1497 L 241 1520 L 280 1530 L 302 1532 L 305 1535 L 1232 1535 L 1235 1532 L 1281 1524 L 1335 1504 L 1384 1476 L 1425 1443 L 1460 1405 L 1491 1359 L 1519 1296 L 1530 1253 L 1532 1231 L 1535 1229 L 1535 305 L 1532 303 L 1530 281 L 1519 238 L 1503 199 L 1470 143 L 1437 104 L 1399 70 L 1349 38 L 1291 14 L 1256 5 L 1234 3 L 1231 0 L 305 0 L 302 3 L 280 5 L 237 16 L 200 31 L 162 52 Z" fill="#030304"/>
+<path d="M 1124 930 L 1077 940 L 1040 956 L 1001 983 L 966 1020 L 946 1051 L 934 1077 L 972 1124 L 975 1124 L 999 1073 L 1017 1048 L 1034 1030 L 1056 1013 L 1084 998 L 1130 984 L 1125 972 Z" fill="#5900F5"/>
+<path d="M 411 930 L 410 974 L 405 983 L 453 999 L 469 1007 L 496 1026 L 518 1048 L 544 1088 L 558 1122 L 561 1124 L 599 1073 L 587 1048 L 567 1018 L 535 984 L 498 958 L 451 938 Z" fill="#5900F5"/>
+<path d="M 843 353 L 842 392 L 837 407 L 822 418 L 799 420 L 860 431 L 894 441 L 926 454 L 959 471 L 995 494 L 1022 515 L 1056 548 L 1080 577 L 1107 618 L 1126 656 L 1140 693 L 1154 756 L 1156 866 L 1159 868 L 1230 867 L 1231 779 L 1227 740 L 1217 692 L 1199 638 L 1184 605 L 1167 574 L 1139 533 L 1105 493 L 1052 446 L 1012 418 L 984 402 L 937 380 L 890 364 Z" fill="#5900F5"/>
+<path d="M 694 353 L 652 362 L 603 378 L 570 392 L 522 418 L 492 438 L 446 476 L 396 531 L 376 559 L 350 604 L 330 650 L 319 684 L 310 723 L 304 768 L 304 867 L 375 868 L 378 866 L 379 768 L 385 728 L 395 689 L 409 653 L 429 614 L 455 575 L 478 548 L 505 521 L 540 493 L 566 476 L 606 455 L 667 433 L 710 423 L 736 420 L 714 418 L 704 412 L 697 403 L 695 397 Z" fill="#5900F5"/>
+<path d="M 1535 1231 L 1525 1282 L 1508 1329 L 1484 1374 L 1463 1404 L 1446 1424 L 1403 1464 L 1355 1496 L 1319 1513 L 1288 1524 L 1235 1535 L 1535 1535 Z" fill="#F5F1E9"/>
+<path d="M 0 1230 L 0 1535 L 301 1535 L 244 1523 L 188 1500 L 165 1487 L 132 1464 L 89 1424 L 53 1377 L 28 1331 L 12 1289 Z" fill="#F5F1E9"/>
+<path d="M 658 992 L 562 1126 L 624 1189 L 657 1234 L 680 1278 L 698 1333 L 837 1333 L 855 1281 L 883 1229 L 916 1185 L 972 1125 L 923 1065 L 871 992 L 782 991 L 780 994 L 780 1101 L 783 1107 L 798 1114 L 813 1131 L 819 1148 L 819 1162 L 815 1176 L 810 1184 L 791 1201 L 769 1207 L 745 1202 L 733 1194 L 721 1179 L 716 1166 L 715 1150 L 718 1138 L 725 1125 L 739 1112 L 755 1105 L 755 993 L 753 991 Z" fill="#F5F1E9"/>
+<path d="M 1130 877 L 1126 886 L 1126 970 L 1129 980 L 1135 987 L 1145 991 L 1236 991 L 1243 989 L 1251 983 L 1256 971 L 1256 887 L 1252 877 L 1247 872 L 1241 869 L 1156 868 L 1138 870 Z" fill="#F5F1E9"/>
+<path d="M 282 878 L 279 886 L 279 972 L 283 982 L 288 987 L 297 991 L 390 991 L 400 987 L 405 982 L 409 972 L 409 887 L 407 880 L 400 872 L 394 869 L 300 868 L 288 872 Z" fill="#F5F1E9"/>
+<path d="M 891 565 L 889 568 L 890 654 L 911 673 L 993 735 L 996 740 L 881 829 L 878 835 L 879 926 L 1079 778 L 1084 772 L 1084 705 Z" fill="#F5F1E9"/>
+<path d="M 660 565 L 648 571 L 451 705 L 451 773 L 644 918 L 646 917 L 647 830 L 645 825 L 631 812 L 543 744 L 539 738 L 659 652 L 661 644 Z" fill="#F5F1E9"/>
+<path d="M 861 516 L 792 516 L 787 521 L 730 707 L 664 956 L 666 962 L 733 963 L 740 959 L 796 754 L 821 675 L 850 566 L 864 519 Z" fill="#F5F1E9"/>
+<path d="M 1237 295 L 1229 284 L 1218 280 L 1132 281 L 1126 284 L 1118 295 L 1117 320 L 1115 322 L 843 322 L 842 350 L 1115 351 L 1117 353 L 1118 385 L 1121 391 L 1130 398 L 1221 399 L 1228 396 L 1235 389 L 1237 384 Z" fill="#F5F1E9"/>
+<path d="M 298 297 L 298 383 L 302 391 L 314 399 L 407 398 L 415 393 L 420 385 L 421 354 L 423 352 L 695 351 L 695 329 L 693 323 L 423 323 L 421 321 L 420 294 L 411 283 L 402 280 L 318 280 L 308 283 L 301 290 Z" fill="#F5F1E9"/>
+<path d="M 1234 0 L 1288 11 L 1319 22 L 1355 39 L 1403 71 L 1446 111 L 1469 139 L 1486 164 L 1508 206 L 1524 248 L 1535 302 L 1535 0 Z" fill="#F5F1E9"/>
+<path d="M 302 0 L 0 0 L 0 303 L 12 246 L 28 204 L 59 149 L 97 103 L 144 62 L 190 34 L 247 11 Z" fill="#F5F1E9"/>
+<path d="M 707 278 L 700 285 L 696 295 L 695 322 L 697 395 L 700 405 L 708 413 L 717 417 L 819 417 L 831 411 L 839 399 L 840 294 L 834 282 L 821 274 L 716 274 Z" fill="#E7F000"/>
 </svg>
