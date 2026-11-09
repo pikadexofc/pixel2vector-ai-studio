@@ -1,5 +1,5 @@
 ﻿<p align="center">
-  <img src="assets/icons/icon.svg" width="120" height="120" alt="Pixel2Vector AI Studio Logo" />
+  <img src="assets/icons/code-bezier-icon.svg?v=2" width="120" height="120" alt="Pixel2Vector AI Studio Logo" />
 </p>
 
 <h1 align="center">Pixel2Vector AI Studio</h1>
@@ -150,4 +150,5 @@ pixel2vector rip https://stripe.com --format ai --output stripe-hero.ai
   ]
 }
 ```
+
 
