@@ -1,0 +1,57 @@
+{
+  "source": {
+    "filename": "1000154473.jpg",
+    "sha256": "a8f9d5e487d8edccea12616015c4411b72624b3e8ee95b024742ffa4680050ce",
+    "width": 1536,
+    "height": 1536,
+    "format": "JPEG",
+    "mode": "RGB"
+  },
+  "canvas": {
+    "width": 1536,
+    "height": 1536,
+    "unit": "px",
+    "origin": "top-left",
+    "coordinate_format": "[x,y,width,height]"
+  },
+  "observations": {
+    "headline": [
+      "LESS EDITING.",
+      "MORE CREATING.",
+      "MORE SLEEP."
+    ],
+    "brand": "SUBPILOT",
+    "tagline": "SAVES TIME. EVERY TIME.",
+    "feature_copy": [
+      "AI SUBTITLES THAT ARE FAST. ACCURATE. RELIABLE.",
+      "Auto subtitle in seconds",
+      "98%+ accuracy",
+      "Supports 100+ languages",
+      "Built for video editors"
+    ],
+    "right_panel": [
+      "SAVE HOURS EVERY WEEK.",
+      "SCAN TO TRY SUBPILOT NOW!"
+    ],
+    "url": "subpilot-ai.ai.studio"
+  },
+  "palette_estimates": {
+    "paper": "#FBF5E9",
+    "ink": "#24130C",
+    "magenta": "#C21F72",
+    "yellow": "#F3C522",
+    "red_orange": "#D83916"
+  },
+  "limits": [
+    "No exact font identity recovered.",
+    "QR code detected but not decoded.",
+    "Coordinates are hand-estimated, not OCR/segmentation output."
+  ],
+  "coordinate_revision": "Final geometry audit based on original raster crops and rendered HTML bounds.",
+  "known_uncertainties": [
+    "Exact display and logo font identities are unknown.",
+    "QR region was detected, but automated decoding returned an empty payload.",
+    "The paper grain, headline distress and halftone are procedural approximations, not recovered source masks.",
+    "The wordmark is editable typography rather than the original vector asset."
+  ]
+}

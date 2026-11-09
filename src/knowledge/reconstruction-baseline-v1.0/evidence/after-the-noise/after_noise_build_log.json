@@ -1,0 +1,388 @@
+{
+  "root": "/mnt/data/after-the-noise-reconstruction",
+  "zip": "/mnt/data/After-the-Noise-PixelPerfect-Reconstruction-v1.0.zip",
+  "preview": "/mnt/data/after-the-noise-reconstruction/preview.png",
+  "standalone": "/mnt/data/After-the-Noise-Standalone.html",
+  "metrics": {
+    "viewport": [
+      1536,
+      569
+    ],
+    "artboard": {
+      "x": 0,
+      "y": 0,
+      "width": 1536,
+      "height": 569
+    },
+    "title": {
+      "x": 109.8125,
+      "y": 187.765625,
+      "width": 706.546875,
+      "height": 187.765625,
+      "scrollWidth": 707
+    },
+    "imgs": [
+      {
+        "index": 0,
+        "complete": true,
+        "naturalWidth": 228,
+        "naturalHeight": 76,
+        "rendered": true
+      },
+      {
+        "index": 1,
+        "complete": true,
+        "naturalWidth": 281,
+        "naturalHeight": 151,
+        "rendered": true
+      },
+      {
+        "index": 2,
+        "complete": true,
+        "naturalWidth": 153,
+        "naturalHeight": 264,
+        "rendered": true
+      },
+      {
+        "index": 3,
+        "complete": true,
+        "naturalWidth": 711,
+        "naturalHeight": 404,
+        "rendered": true
+      },
+      {
+        "index": 4,
+        "complete": true,
+        "naturalWidth": 565,
+        "naturalHeight": 268,
+        "rendered": true
+      },
+      {
+        "index": 5,
+        "complete": true,
+        "naturalWidth": 103,
+        "naturalHeight": 306,
+        "rendered": true
+      },
+      {
+        "index": 6,
+        "complete": true,
+        "naturalWidth": 512,
+        "naturalHeight": 190,
+        "rendered": true
+      },
+      {
+        "index": 7,
+        "complete": true,
+        "naturalWidth": 767,
+        "naturalHeight": 173,
+        "rendered": true
+      },
+      {
+        "index": 8,
+        "complete": true,
+        "naturalWidth": 120,
+        "naturalHeight": 98,
+        "rendered": true
+      }
+    ],
+    "mobile_390": {
+      "viewport": [
+        390,
+        300
+      ],
+      "artboard": {
+        "x": 0,
+        "y": 77.765625,
+        "width": 390,
+        "height": 144.46875
+      },
+      "headline": {
+        "x": 27.875,
+        "y": 125.4375,
+        "right": 207.265625,
+        "bottom": 173.109375
+      },
+      "subtitle": {
+        "x": 29.828125,
+        "right": 193.625
+      },
+      "horizontalOverflow": false
+    }
+  },
+  "qa": {
+    "report_version": "1.0.0",
+    "project_id": "ATN-2026-001",
+    "status": "first-render-reviewed",
+    "reference_dimensions": [
+      1536,
+      569
+    ],
+    "render_dimensions": [
+      1536,
+      569
+    ],
+    "dimension_match": true,
+    "environment": {
+      "browser": "Chromium via Playwright",
+      "device_scale_factor": 1,
+      "viewport": [
+        1536,
+        569
+      ],
+      "remote_dependencies": false
+    },
+    "checks": [
+      {
+        "id": "QA01",
+        "name": "Canvas dimensions",
+        "status": "PASS",
+        "result": "1536 \u00d7 569 px artboard."
+      },
+      {
+        "id": "QA02",
+        "name": "Local image assets",
+        "status": "PASS",
+        "result": [
+          {
+            "index": 0,
+            "complete": true,
+            "naturalWidth": 228,
+            "naturalHeight": 76,
+            "rendered": true
+          },
+          {
+            "index": 1,
+            "complete": true,
+            "naturalWidth": 281,
+            "naturalHeight": 151,
+            "rendered": true
+          },
+          {
+            "index": 2,
+            "complete": true,
+            "naturalWidth": 153,
+            "naturalHeight": 264,
+            "rendered": true
+          },
+          {
+            "index": 3,
+            "complete": true,
+            "naturalWidth": 711,
+            "naturalHeight": 404,
+            "rendered": true
+          },
+          {
+            "index": 4,
+            "complete": true,
+            "naturalWidth": 565,
+            "naturalHeight": 268,
+            "rendered": true
+          },
+          {
+            "index": 5,
+            "complete": true,
+            "naturalWidth": 103,
+            "naturalHeight": 306,
+            "rendered": true
+          },
+          {
+            "index": 6,
+            "complete": true,
+            "naturalWidth": 512,
+            "naturalHeight": 190,
+            "rendered": true
+          },
+          {
+            "index": 7,
+            "complete": true,
+            "naturalWidth": 767,
+            "naturalHeight": 173,
+            "rendered": true
+          },
+          {
+            "index": 8,
+            "complete": true,
+            "naturalWidth": 120,
+            "naturalHeight": 98,
+            "rendered": true
+          }
+        ]
+      },
+      {
+        "id": "QA03",
+        "name": "Headline containment",
+        "status": "PASS",
+        "result": {
+          "x": 109.8125,
+          "y": 187.765625,
+          "width": 706.546875,
+          "height": 187.765625,
+          "scrollWidth": 707
+        }
+      },
+      {
+        "id": "QA04",
+        "name": "Layer separation",
+        "status": "PASS",
+        "result": "Live text, SVG shapes, SVG drafting marks and nine source-derived transparent PNG cutouts including architectural and torn-paper fragments."
+      },
+      {
+        "id": "QA05",
+        "name": "Responsive artboard",
+        "status": "PASS",
+        "result": {
+          "viewport": [
+            390,
+            300
+          ],
+          "artboard": {
+            "x": 0,
+            "y": 77.765625,
+            "width": 390,
+            "height": 144.46875
+          },
+          "headline": {
+            "x": 27.875,
+            "y": 125.4375,
+            "right": 207.265625,
+            "bottom": 173.109375
+          },
+          "subtitle": {
+            "x": 29.828125,
+            "right": 193.625
+          },
+          "horizontalOverflow": false
+        }
+      },
+      {
+        "id": "QA06",
+        "name": "Perceptual comparison",
+        "status": "REVIEW",
+        "result": "Numeric mismatch and SSIM are reported separately; visual inspection confirms a structurally close first pass, not pixel-perfect."
+      }
+    ],
+    "limitations": [
+      "Typography face is approximate; no exact original font was provided.",
+      "Concrete elements use masked source-derived image fragments, not newly generated architecture.",
+      "Some architectural masks are hand-traced and may need local edge refinement.",
+      "Responsive scaling is CSS-based; no alternate mobile composition is supplied."
+    ],
+    "browser_metrics": {
+      "viewport": [
+        1536,
+        569
+      ],
+      "artboard": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 569
+      },
+      "title": {
+        "x": 109.8125,
+        "y": 187.765625,
+        "width": 706.546875,
+        "height": 187.765625,
+        "scrollWidth": 707
+      },
+      "imgs": [
+        {
+          "index": 0,
+          "complete": true,
+          "naturalWidth": 228,
+          "naturalHeight": 76,
+          "rendered": true
+        },
+        {
+          "index": 1,
+          "complete": true,
+          "naturalWidth": 281,
+          "naturalHeight": 151,
+          "rendered": true
+        },
+        {
+          "index": 2,
+          "complete": true,
+          "naturalWidth": 153,
+          "naturalHeight": 264,
+          "rendered": true
+        },
+        {
+          "index": 3,
+          "complete": true,
+          "naturalWidth": 711,
+          "naturalHeight": 404,
+          "rendered": true
+        },
+        {
+          "index": 4,
+          "complete": true,
+          "naturalWidth": 565,
+          "naturalHeight": 268,
+          "rendered": true
+        },
+        {
+          "index": 5,
+          "complete": true,
+          "naturalWidth": 103,
+          "naturalHeight": 306,
+          "rendered": true
+        },
+        {
+          "index": 6,
+          "complete": true,
+          "naturalWidth": 512,
+          "naturalHeight": 190,
+          "rendered": true
+        },
+        {
+          "index": 7,
+          "complete": true,
+          "naturalWidth": 767,
+          "naturalHeight": 173,
+          "rendered": true
+        },
+        {
+          "index": 8,
+          "complete": true,
+          "naturalWidth": 120,
+          "naturalHeight": 98,
+          "rendered": true
+        }
+      ],
+      "mobile_390": {
+        "viewport": [
+          390,
+          300
+        ],
+        "artboard": {
+          "x": 0,
+          "y": 77.765625,
+          "width": 390,
+          "height": 144.46875
+        },
+        "headline": {
+          "x": 27.875,
+          "y": 125.4375,
+          "right": 207.265625,
+          "bottom": 173.109375
+        },
+        "subtitle": {
+          "x": 29.828125,
+          "right": 193.625
+        },
+        "horizontalOverflow": false
+      }
+    },
+    "comparison": {
+      "difference_map": "difference-map.png",
+      "threshold_map": "threshold-diff.png",
+      "pixel_rgb_euclidean_threshold": 24,
+      "mismatch_ratio": 0.16720214557703575,
+      "mean_absolute_error_rgb": 24.813236236572266,
+      "ssim": 0.7280747028234688,
+      "interpretation": "Metrics are diagnostic only. Source-derived image fragments improve texture fidelity, while text, vector masks, colors and traced edges remain approximate."
+    }
+  }
+}

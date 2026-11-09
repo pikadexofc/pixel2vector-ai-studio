@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="PixelPerfect Studio icon">
+  <rect width="128" height="128" rx="24" fill="#0B1117"/>
+  <g fill="none" stroke="#F5F7F8" stroke-width="6" stroke-linejoin="round">
+    <path d="M24 38h58v58H24z"/><path d="M46 18h58v58H46z"/>
+  </g>
+  <path d="M46 18h58v16H46zM88 34h16v42H88z" fill="#00D4E3"/>
+  <circle cx="82" cy="96" r="6" fill="#00D4E3"/>
+</svg>

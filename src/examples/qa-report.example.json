@@ -1,0 +1,48 @@
+{
+  "qa_id": "qa-example-001",
+  "reference": {
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "width_px": 1200,
+    "height_px": 1500
+  },
+  "render": {
+    "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "width_px": 1200,
+    "height_px": 1500
+  },
+  "environment": {
+    "browser": "Chromium",
+    "version": "record exact installed version",
+    "device_scale_factor": 1,
+    "fonts": [
+      "Inter"
+    ]
+  },
+  "comparison": {
+    "algorithm": "Pixelmatch plus independently calculated mismatch ratio",
+    "pixel_threshold": 0.1,
+    "mismatch_ratio": 0.018,
+    "ssim": 0.97,
+    "difference_map": "artifacts/difference.png"
+  },
+  "passes": [
+    "structural",
+    "fidelity",
+    "finishing"
+  ],
+  "defects": [
+    {
+      "id": "defect-001",
+      "severity": "minor",
+      "status": "accepted",
+      "description": "Small antialiasing variation around diagonal edge",
+      "layer_ids": [
+        "title"
+      ],
+      "evidence": [
+        "artifacts/difference.png"
+      ]
+    }
+  ],
+  "status": "PASS_WITH_EXCEPTIONS"
+}

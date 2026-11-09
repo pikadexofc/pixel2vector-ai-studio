@@ -1,0 +1,368 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pixelpie.media/schemas/continuity-checkpoint.schema.json",
+  "title": "PixelPerfect Studio Continuity Checkpoint",
+  "description": "Portable, secret-free project state used to continue reconstruction manually in ChatGPT when an integrated service is unavailable.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "checkpoint_id",
+    "project",
+    "current_stage",
+    "completion_status",
+    "created_at",
+    "updated_at",
+    "user_goal",
+    "source_inputs",
+    "stage_ledger",
+    "artifacts",
+    "fallback",
+    "open_items",
+    "next_action",
+    "security_review"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "checkpoint_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "project_id",
+        "name"
+      ],
+      "properties": {
+        "project_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "canvas": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "width",
+            "height",
+            "unit"
+          ],
+          "properties": {
+            "width": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "height": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "unit": {
+              "enum": [
+                "px"
+              ]
+            }
+          }
+        },
+        "manifest_version": {
+          "type": "string"
+        }
+      }
+    },
+    "current_stage": {
+      "enum": [
+        "INTAKE",
+        "FORENSICS",
+        "LAYER_PLAN",
+        "ASSET_PLAN",
+        "ASSET_READY",
+        "COMPILE",
+        "RENDER",
+        "QA",
+        "CORRECT",
+        "LEARN",
+        "DELIVER"
+      ]
+    },
+    "completion_status": {
+      "enum": [
+        "IN_PROGRESS",
+        "PARTIAL",
+        "BLOCKED",
+        "COMPLETED"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "user_goal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "input_id",
+          "kind",
+          "description",
+          "availability"
+        ],
+        "properties": {
+          "input_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "reference_image",
+              "source_file",
+              "text_brief",
+              "font",
+              "asset",
+              "other"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{64}$"
+          },
+          "availability": {
+            "enum": [
+              "available_in_current_chat",
+              "saved_in_project_export",
+              "requires_reupload",
+              "unavailable"
+            ]
+          },
+          "reupload_note": {
+            "type": "string"
+          },
+          "sensitive": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
+    },
+    "stage_ledger": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stage",
+          "status",
+          "summary"
+        ],
+        "properties": {
+          "stage": {
+            "enum": [
+              "INTAKE",
+              "FORENSICS",
+              "LAYER_PLAN",
+              "ASSET_PLAN",
+              "ASSET_READY",
+              "COMPILE",
+              "RENDER",
+              "QA",
+              "CORRECT",
+              "LEARN",
+              "DELIVER"
+            ]
+          },
+          "status": {
+            "enum": [
+              "NOT_STARTED",
+              "IN_PROGRESS",
+              "COMPLETED",
+              "BLOCKED",
+              "FAILED",
+              "SKIPPED"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "failure_reason": {
+            "type": "string"
+          },
+          "fallback_used": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "artifact_id",
+          "kind",
+          "name",
+          "availability"
+        ],
+        "properties": {
+          "artifact_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "analysis",
+              "layer_manifest",
+              "asset",
+              "html",
+              "svg",
+              "render",
+              "qa_report",
+              "diff_map",
+              "learning_record",
+              "checkpoint",
+              "other"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{64}$"
+          },
+          "availability": {
+            "enum": [
+              "available_in_chat",
+              "downloadable",
+              "local_only",
+              "external_service",
+              "pending"
+            ]
+          },
+          "location_hint": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "fallback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "reason",
+        "manual_chatgpt_available",
+        "services_unavailable",
+        "limitations"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "NONE",
+            "MANUAL_CHATGPT",
+            "LOCAL_MANUAL",
+            "ALTERNATE_PROVIDER"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "manual_chatgpt_available": {
+          "type": "boolean"
+        },
+        "services_unavailable": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "manual_steps_completed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "resume_when_available": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "open_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_action": {
+      "type": "string",
+      "minLength": 1
+    },
+    "security_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contains_credentials",
+        "contains_private_customer_data",
+        "safe_to_share"
+      ],
+      "properties": {
+        "contains_credentials": {
+          "const": false
+        },
+        "contains_private_customer_data": {
+          "type": "boolean"
+        },
+        "safe_to_share": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

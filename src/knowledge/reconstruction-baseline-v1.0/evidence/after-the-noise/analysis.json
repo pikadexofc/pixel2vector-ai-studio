@@ -1,0 +1,212 @@
+{
+  "document_id": "ATN-2026-001",
+  "title": "After the Noise",
+  "source": {
+    "filename": "1000154722.png",
+    "format": "JPEG",
+    "dimensions_px": [
+      1536,
+      569
+    ],
+    "mode": "RGB",
+    "bytes": 233510,
+    "sha256": "1d9b0fda4d1c6972c7718574d40a891347c255d3d294d486cf75dedcc79a3a5c",
+    "orientation": "landscape"
+  },
+  "coordinate_system": {
+    "origin": "top-left",
+    "units": "px",
+    "bbox": "[x_min,y_min,x_max,y_max]"
+  },
+  "observations": [
+    {
+      "id": "R01",
+      "type": "canvas",
+      "bbox": [
+        0,
+        0,
+        1536,
+        569
+      ],
+      "class": "OBSERVED",
+      "confidence": 1.0,
+      "note": "Original image dimensions."
+    },
+    {
+      "id": "R02",
+      "type": "background",
+      "bbox": [
+        0,
+        0,
+        1536,
+        569
+      ],
+      "class": "OBSERVED",
+      "confidence": 0.98,
+      "note": "Warm off-white paper texture, most visible on right and at torn edges."
+    },
+    {
+      "id": "R03",
+      "type": "black_torn_field",
+      "bbox": [
+        0,
+        0,
+        938,
+        521
+      ],
+      "class": "ESTIMATED",
+      "confidence": 0.91,
+      "note": "Irregular black torn-paper mass across left and middle; traced from visible silhouette."
+    },
+    {
+      "id": "R04",
+      "type": "headline",
+      "bbox": [
+        112,
+        175,
+        728,
+        352
+      ],
+      "class": "OBSERVED",
+      "confidence": 0.98,
+      "text": "AFTER\nTHE NOISE.",
+      "note": "White high-contrast italic serif, two-line composition."
+    },
+    {
+      "id": "R05",
+      "type": "subtitle",
+      "bbox": [
+        117,
+        371,
+        654,
+        395
+      ],
+      "class": "OBSERVED",
+      "confidence": 0.97,
+      "text": "THE HOURS ARE MINE AGAIN"
+    },
+    {
+      "id": "R06",
+      "type": "upper_diagonal_beam",
+      "bbox": [
+        232,
+        0,
+        938,
+        402
+      ],
+      "class": "DERIVED",
+      "confidence": 0.9,
+      "note": "Source-derived concrete fragment isolated with polygon mask."
+    },
+    {
+      "id": "R07",
+      "type": "right_architecture",
+      "bbox": [
+        936,
+        131,
+        1495,
+        410
+      ],
+      "class": "DERIVED",
+      "confidence": 0.87,
+      "note": "Concrete frame and support fragments isolated from source."
+    },
+    {
+      "id": "R08",
+      "type": "staircase",
+      "bbox": [
+        1027,
+        381,
+        1536,
+        569
+      ],
+      "class": "DERIVED",
+      "confidence": 0.9,
+      "note": "Source-derived staircase region isolated with polygon mask."
+    },
+    {
+      "id": "R09",
+      "type": "foreground_beam",
+      "bbox": [
+        277,
+        382,
+        1038,
+        550
+      ],
+      "class": "DERIVED",
+      "confidence": 0.88,
+      "note": "Source-derived diagonal foreground concrete beam."
+    },
+    {
+      "id": "R10",
+      "type": "violet_blocks",
+      "bbox": [
+        0,
+        0,
+        1536,
+        569
+      ],
+      "class": "OBSERVED",
+      "confidence": 0.99,
+      "note": "Saturated violet rectangular and triangular blocks visible behind the collage."
+    },
+    {
+      "id": "R11",
+      "type": "technical_marks",
+      "bbox": [
+        0,
+        0,
+        1536,
+        569
+      ],
+      "class": "OBSERVED",
+      "confidence": 0.95,
+      "note": "Fine crosshair marks, arcs, construction lines, speckle and registration details."
+    }
+  ],
+  "palette_estimates": [
+    {
+      "name": "paper",
+      "hex": "#E9E7E1",
+      "class": "ESTIMATED"
+    },
+    {
+      "name": "near_black",
+      "hex": "#09090A",
+      "class": "ESTIMATED"
+    },
+    {
+      "name": "violet",
+      "hex": "#4B00E8",
+      "class": "ESTIMATED"
+    },
+    {
+      "name": "signal_yellow",
+      "hex": "#E6E000",
+      "class": "ESTIMATED"
+    },
+    {
+      "name": "concrete_mid",
+      "hex": "#8B8983",
+      "class": "ESTIMATED"
+    }
+  ],
+  "typography": [
+    {
+      "role": "headline",
+      "candidate": "GFS Artemisia Bold Italic / EB Garamond Bold Italic",
+      "class": "ESTIMATED",
+      "note": "Exact typeface is not recoverable from raster evidence."
+    },
+    {
+      "role": "subtitle",
+      "candidate": "condensed grotesk with wide tracking",
+      "class": "ESTIMATED"
+    }
+  ],
+  "unresolved": [
+    "Exact original font files are unknown.",
+    "Some concrete fragments are extracted source imagery, not independently regenerated architecture.",
+    "The tiny technical textures are approximated with SVG noise and vector drafting marks."
+  ]
+}

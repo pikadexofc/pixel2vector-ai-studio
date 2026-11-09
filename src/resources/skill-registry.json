@@ -1,0 +1,71 @@
+{
+  "registry_version": "1.2.0",
+  "skills": [
+    {
+      "slug": "asset-intelligence",
+      "owner_module": "M04",
+      "status": "integrated-v1.0.0",
+      "evaluation": "resources/reviewer-test-cases.json"
+    },
+    {
+      "slug": "design-memory-curation",
+      "owner_module": "M10",
+      "status": "integrated-v1.0.0",
+      "evaluation": "resources/reviewer-test-cases.json"
+    },
+    {
+      "slug": "design-system-architecture",
+      "owner_module": "M12",
+      "status": "integrated-v1.0.0",
+      "evaluation": "resources/reviewer-test-cases.json"
+    },
+    {
+      "slug": "deterministic-reconstruction",
+      "owner_module": "M05",
+      "status": "integrated-v1.0.0",
+      "evaluation": "resources/reviewer-test-cases.json"
+    },
+    {
+      "slug": "figma-interoperability",
+      "owner_module": "M13",
+      "status": "integrated-v1.0.0",
+      "evaluation": "resources/reviewer-test-cases.json"
+    },
+    {
+      "slug": "manual-fallback-continuity",
+      "owner_module": "M11",
+      "status": "integrated-v1.0.0",
+      "evaluation": "resources/reviewer-test-cases.json"
+    },
+    {
+      "slug": "pixelperfect-orchestrator",
+      "owner_module": "M11",
+      "status": "integrated-v1.0.0",
+      "evaluation": "resources/reviewer-test-cases.json"
+    },
+    {
+      "slug": "setup",
+      "owner_module": "M11",
+      "status": "integrated-v1.0.0",
+      "evaluation": "resources/reviewer-test-cases.json"
+    },
+    {
+      "slug": "visual-quality-assurance",
+      "owner_module": "M06",
+      "status": "integrated-v1.0.0",
+      "evaluation": "resources/reviewer-test-cases.json"
+    },
+    {
+      "slug": "visual-reference-forensics",
+      "owner_module": "M03",
+      "status": "integrated-v1.0.0",
+      "evaluation": "resources/reviewer-test-cases.json"
+    },
+    {
+      "slug": "workspace-engineering",
+      "owner_module": "M00",
+      "status": "integrated-v1.0.0",
+      "evaluation": "resources/reviewer-test-cases.json"
+    }
+  ]
+}

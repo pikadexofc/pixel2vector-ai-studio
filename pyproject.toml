@@ -1,0 +1,34 @@
+﻿[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pixel2vector-ai-studio"
+version = "1.0.0"
+authors = [
+  { name="Pickko", email="pikadexofc@users.noreply.github.com" },
+]
+description = "High-fidelity AI pixel-to-vector converter & live DOM-to-Illustrator vectorizer"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Graphics",
+]
+dependencies = [
+    "pydantic>=2.0",
+    "svglib>=1.5.0",
+    "reportlab>=3.6.0",
+    "click>=8.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=23.0"
+]
+
+[project.scripts]
+pixel2vector = "src.cli.main:cli"

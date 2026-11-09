@@ -1,0 +1,103 @@
+{
+  "project_id": "ATN-2026-001",
+  "canvas": [
+    1536,
+    569
+  ],
+  "current_state": "DELIVERABLE_READY_FIRST_PASS",
+  "stages": [
+    {
+      "stage": "INTAKE",
+      "status": "COMPLETE",
+      "evidence": [
+        "source metadata",
+        "source SHA-256"
+      ]
+    },
+    {
+      "stage": "FORENSICS",
+      "status": "COMPLETE",
+      "evidence": [
+        "analysis.json",
+        "manual region mapping"
+      ]
+    },
+    {
+      "stage": "LAYER_PLAN",
+      "status": "COMPLETE",
+      "evidence": [
+        "layer-manifest.json",
+        "16 stable layer IDs"
+      ]
+    },
+    {
+      "stage": "ASSET_PLAN",
+      "status": "COMPLETE",
+      "evidence": [
+        "asset-register.json",
+        "9 masked source-derived image fragments"
+      ]
+    },
+    {
+      "stage": "ASSET_READY",
+      "status": "COMPLETE",
+      "evidence": [
+        "asset hashes",
+        "all nine assets decoded in Chromium"
+      ]
+    },
+    {
+      "stage": "COMPILE",
+      "status": "COMPLETE",
+      "evidence": [
+        "index.html",
+        "After-the-Noise-Standalone.html"
+      ]
+    },
+    {
+      "stage": "RENDER",
+      "status": "COMPLETE",
+      "evidence": [
+        "preview.png",
+        "1536x569 Chromium render"
+      ]
+    },
+    {
+      "stage": "QA",
+      "status": "REVIEW",
+      "evidence": [
+        "qa-report.json",
+        "difference-map.png",
+        "threshold-diff.png"
+      ],
+      "open_items": [
+        "Exact original fonts remain unknown",
+        "Perceptual mismatch remains measurable"
+      ]
+    },
+    {
+      "stage": "CORRECT",
+      "status": "COMPLETE_FIRST_PASS",
+      "evidence": [
+        "torn-edge extraction",
+        "right upright extraction",
+        "headline positioning fix"
+      ]
+    },
+    {
+      "stage": "LEARN",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "stage": "DELIVER",
+      "status": "READY",
+      "evidence": [
+        "ZIP package",
+        "standalone HTML",
+        "preview"
+      ]
+    }
+  ],
+  "next_valid_action": "Review visual differences and approve targeted corrections to typography, texture and architectural masks."
+}

@@ -1,0 +1,666 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pixelperfect.studio/schemas/standalone-html-delivery.schema.json",
+  "title": "PixelPerfect Verified Standalone HTML Delivery Evidence",
+  "type": "object",
+  "required": [
+    "qa_id",
+    "reference",
+    "render",
+    "environment",
+    "comparison",
+    "passes",
+    "defects",
+    "delivery",
+    "status",
+    "visual_review"
+  ],
+  "properties": {
+    "qa_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reference": {
+      "$ref": "#/$defs/imageRecord"
+    },
+    "render": {
+      "$ref": "#/$defs/imageRecord"
+    },
+    "environment": {
+      "type": "object",
+      "required": [
+        "browser",
+        "version",
+        "device_scale_factor"
+      ],
+      "properties": {
+        "browser": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "device_scale_factor": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "fonts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "comparison": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "algorithm_version",
+        "preprocessing",
+        "pixel_threshold_rgb",
+        "mismatch_ratio",
+        "mae",
+        "ssim",
+        "acceptance_thresholds"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "rgb-max-channel-mismatch+rgb-mae+ssim"
+        },
+        "algorithm_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "preprocessing": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mismatch_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "mae": {
+          "type": "number",
+          "minimum": 0
+        },
+        "ssim": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "acceptance_thresholds": {
+          "type": "object",
+          "required": [
+            "profile_id",
+            "calibration_status",
+            "source"
+          ],
+          "properties": {
+            "profile_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "calibration_status": {
+              "enum": [
+                "validated",
+                "diagnostic_only"
+              ]
+            },
+            "source": {
+              "enum": [
+                "user_approved",
+                "calibrated_benchmark",
+                "validated_profile",
+                "diagnostic_only"
+              ]
+            },
+            "max_mismatch_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "max_mae": {
+              "type": "number",
+              "minimum": 0
+            },
+            "min_ssim": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "additionalProperties": true,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "calibration_status": {
+                    "const": "validated"
+                  }
+                },
+                "required": [
+                  "calibration_status"
+                ]
+              },
+              "then": {
+                "required": [
+                  "max_mismatch_ratio",
+                  "max_mae",
+                  "min_ssim"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "calibration_status": {
+                    "const": "diagnostic_only"
+                  }
+                },
+                "required": [
+                  "calibration_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "source": {
+                    "const": "diagnostic_only"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "region_metrics": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "pixel_threshold_rgb": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        },
+        "alpha_background_rgb": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "passes": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "enum": [
+          "structural",
+          "fidelity",
+          "finishing"
+        ]
+      },
+      "allOf": [
+        {
+          "contains": {
+            "const": "structural"
+          }
+        },
+        {
+          "contains": {
+            "const": "fidelity"
+          }
+        },
+        {
+          "contains": {
+            "const": "finishing"
+          }
+        }
+      ]
+    },
+    "defects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "severity",
+          "status",
+          "description"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "severity": {
+            "enum": [
+              "critical",
+              "major",
+              "minor",
+              "info"
+            ]
+          },
+          "status": {
+            "enum": [
+              "fixed",
+              "accepted"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "layer_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "approval": {
+            "type": "object",
+            "required": [
+              "approved_by",
+              "reason"
+            ],
+            "properties": {
+              "approved_by": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "accepted"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "approval"
+              ],
+              "properties": {
+                "severity": {
+                  "not": {
+                    "const": "critical"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "additionalProperties": true
+      }
+    },
+    "delivery": {
+      "type": "object",
+      "required": [
+        "filename",
+        "html_sha256",
+        "standalone",
+        "external_dependencies",
+        "manifest_layer_ids_match",
+        "assets_loaded",
+        "fonts_loaded",
+        "critical_text_checked",
+        "canvas_overflow",
+        "console_error_count",
+        "critical_regions",
+        "layer_geometry_checked",
+        "z_order_checked",
+        "reference_bounds_checked",
+        "asset_hashes_verified",
+        "network_request_count",
+        "rendered_artboard",
+        "layer_geometry",
+        "layer_stack",
+        "asset_loads",
+        "font_checks",
+        "critical_text_checks"
+      ],
+      "properties": {
+        "filename": {
+          "type": "string",
+          "pattern": "\\.html$"
+        },
+        "html_sha256": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "standalone": {
+          "const": true
+        },
+        "external_dependencies": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "manifest_layer_ids_match": {
+          "const": true
+        },
+        "assets_loaded": {
+          "const": true
+        },
+        "fonts_loaded": {
+          "const": true
+        },
+        "critical_text_checked": {
+          "const": true
+        },
+        "canvas_overflow": {
+          "const": false
+        },
+        "console_error_count": {
+          "const": 0
+        },
+        "critical_regions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "status"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "const": "pass"
+              },
+              "evidence": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "layer_geometry_checked": {
+          "const": true
+        },
+        "z_order_checked": {
+          "const": true
+        },
+        "reference_bounds_checked": {
+          "const": true
+        },
+        "asset_hashes_verified": {
+          "const": true
+        },
+        "network_request_count": {
+          "const": 0
+        },
+        "rendered_artboard": {
+          "type": "object",
+          "required": [
+            "x_px",
+            "y_px",
+            "width_px",
+            "height_px"
+          ],
+          "properties": {
+            "x_px": {
+              "const": 0
+            },
+            "y_px": {
+              "const": 0
+            },
+            "width_px": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "height_px": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "layer_geometry": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "x_px",
+              "y_px",
+              "width_px",
+              "height_px",
+              "status"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "x_px": {
+                "type": "number"
+              },
+              "y_px": {
+                "type": "number"
+              },
+              "width_px": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "height_px": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "status": {
+                "const": "pass"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "layer_stack": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "z_index",
+              "status"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "z_index": {
+                "type": "integer"
+              },
+              "status": {
+                "const": "pass"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "asset_loads": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "asset_id",
+              "status"
+            ],
+            "properties": {
+              "asset_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "const": "pass"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "font_checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "font_family",
+              "status"
+            ],
+            "properties": {
+              "font_family": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "const": "pass"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "critical_text_checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "layer_id",
+              "expected_text",
+              "actual_text",
+              "status"
+            ],
+            "properties": {
+              "layer_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "expected_text": {
+                "type": "string"
+              },
+              "actual_text": {
+                "type": "string"
+              },
+              "status": {
+                "const": "pass"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "status": {
+      "const": "PASS"
+    },
+    "visual_review": {
+      "type": "object",
+      "required": [
+        "status",
+        "method",
+        "reviewer",
+        "reference_sha256",
+        "render_sha256",
+        "passes",
+        "critical_regions_reviewed"
+      ],
+      "properties": {
+        "status": {
+          "const": "PASS"
+        },
+        "method": {
+          "const": "direct_visual_inspection"
+        },
+        "reviewer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reference_sha256": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "render_sha256": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "passes": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "enum": [
+              "structural",
+              "fidelity",
+              "finishing"
+            ]
+          }
+        },
+        "critical_regions_reviewed": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "imageRecord": {
+      "type": "object",
+      "required": [
+        "sha256",
+        "width_px",
+        "height_px",
+        "detected_format"
+      ],
+      "properties": {
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "width_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "detected_format": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

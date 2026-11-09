@@ -1,0 +1,273 @@
+{
+  "qa_version": "1.0.0",
+  "project_id": "subpilot-poster-reconstruction-001",
+  "status": "FIRST_PASS_RENDERED_NOT_PIXEL_VERIFIED",
+  "render": {
+    "file": "preview.png",
+    "dimensions": [
+      1536,
+      1536
+    ],
+    "format": "PNG",
+    "renderer": "Chromium via Playwright",
+    "device_scale_factor": 1
+  },
+  "review_passes": {
+    "structural": {
+      "status": "PASS",
+      "checks": [
+        "1536 x 1536 render produced.",
+        "Headline layer boxes fit inside canvas.",
+        "CTA and QR frame fit inside canvas.",
+        "QR source crop loaded, 208 x 203 source pixels.",
+        "No browser console errors in test runs."
+      ]
+    },
+    "visual_fidelity": {
+      "status": "REVIEWED_WITH_KNOWN_DEVIATIONS",
+      "checks": [
+        "Main hierarchy and large regions aligned against source crops.",
+        "Paper tone, dot field, three-line headline, feature panel, player, right-side CTA and QR frame are reconstructed.",
+        "Typography, source distress masks, original vector logo and hand-drawn artwork are approximate."
+      ]
+    },
+    "finishing": {
+      "status": "PARTIAL",
+      "checks": [
+        "Responsive canvas scaling smoke-tested at three viewport sizes.",
+        "No headline, button or QR frame clipping at target canvas size.",
+        "Exact texture, antialiasing and small edge details not certified."
+      ]
+    }
+  },
+  "responsive_viewports": [
+    {
+      "viewport": [
+        1536,
+        1536
+      ],
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1536,
+        "right": 1536,
+        "bottom": 1536
+      },
+      "artboard": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1536,
+        "right": 1536,
+        "bottom": 1536
+      },
+      "scale": "1",
+      "qrLoaded": true,
+      "headlines": [
+        {
+          "x": 68,
+          "y": 248,
+          "width": 1378.27,
+          "height": 269.27,
+          "right": 1446.27,
+          "bottom": 517.27
+        },
+        {
+          "x": 68,
+          "y": 534,
+          "width": 1435.86,
+          "height": 247.86,
+          "right": 1503.86,
+          "bottom": 781.86
+        },
+        {
+          "x": 92,
+          "y": 788,
+          "width": 1120.3,
+          "height": 260.09,
+          "right": 1212.3,
+          "bottom": 1048.09
+        }
+      ],
+      "button": {
+        "x": 42,
+        "y": 1370,
+        "width": 552,
+        "height": 100,
+        "right": 594,
+        "bottom": 1470
+      },
+      "qrFrame": {
+        "x": 1215,
+        "y": 1250.13,
+        "width": 256,
+        "height": 250,
+        "right": 1471,
+        "bottom": 1500.13
+      }
+    },
+    {
+      "viewport": [
+        768,
+        768
+      ],
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 768,
+        "right": 768,
+        "bottom": 768
+      },
+      "artboard": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 768,
+        "right": 768,
+        "bottom": 768
+      },
+      "scale": "0.5",
+      "qrLoaded": true,
+      "headlines": [
+        {
+          "x": 34,
+          "y": 124,
+          "width": 689.14,
+          "height": 134.63,
+          "right": 723.14,
+          "bottom": 258.63
+        },
+        {
+          "x": 34,
+          "y": 267,
+          "width": 717.93,
+          "height": 123.93,
+          "right": 751.93,
+          "bottom": 390.93
+        },
+        {
+          "x": 46,
+          "y": 394,
+          "width": 560.15,
+          "height": 130.05,
+          "right": 606.15,
+          "bottom": 524.05
+        }
+      ],
+      "button": {
+        "x": 21,
+        "y": 685,
+        "width": 276,
+        "height": 50,
+        "right": 297,
+        "bottom": 735
+      },
+      "qrFrame": {
+        "x": 607.5,
+        "y": 625.06,
+        "width": 128,
+        "height": 125,
+        "right": 735.5,
+        "bottom": 750.06
+      }
+    },
+    {
+      "viewport": [
+        390,
+        390
+      ],
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 390,
+        "right": 390,
+        "bottom": 390
+      },
+      "artboard": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 390,
+        "right": 390,
+        "bottom": 390
+      },
+      "scale": "0.25390625",
+      "qrLoaded": true,
+      "headlines": [
+        {
+          "x": 17.27,
+          "y": 62.97,
+          "width": 349.95,
+          "height": 68.37,
+          "right": 367.22,
+          "bottom": 131.34
+        },
+        {
+          "x": 17.27,
+          "y": 135.59,
+          "width": 364.57,
+          "height": 62.93,
+          "right": 381.84,
+          "bottom": 198.52
+        },
+        {
+          "x": 23.36,
+          "y": 200.08,
+          "width": 284.45,
+          "height": 66.04,
+          "right": 307.81,
+          "bottom": 266.12
+        }
+      ],
+      "button": {
+        "x": 10.66,
+        "y": 347.85,
+        "width": 140.16,
+        "height": 25.39,
+        "right": 150.82,
+        "bottom": 373.24
+      },
+      "qrFrame": {
+        "x": 308.5,
+        "y": 317.41,
+        "width": 65,
+        "height": 63.48,
+        "right": 373.5,
+        "bottom": 380.89
+      }
+    }
+  ],
+  "metrics": {
+    "ssim": null,
+    "lpips": null,
+    "pixel_mismatch_ratio": null,
+    "reason": "No numerical full-frame similarity comparison was run."
+  },
+  "known_defects": [
+    {
+      "id": "D-001",
+      "severity": "MEDIUM",
+      "description": "Font families are visual substitutes; exact font identities remain unknown."
+    },
+    {
+      "id": "D-002",
+      "severity": "MEDIUM",
+      "description": "Paper grain and halftone distress are procedural approximations."
+    },
+    {
+      "id": "D-003",
+      "severity": "HIGH",
+      "description": "QR payload is unverified. Original QR raster crop is retained."
+    },
+    {
+      "id": "D-004",
+      "severity": "LOW",
+      "description": "Video-player and speech-bubble paths are reconstructed, not traced."
+    }
+  ],
+  "console_errors": [],
+  "acceptance": "Editable first-pass HTML reconstruction. Not certified pixel-perfect; no numerical similarity metrics measured."
+}

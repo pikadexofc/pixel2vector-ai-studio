@@ -1,0 +1,284 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pixelperfect.studio/schemas/visual-analysis.schema.json",
+  "title": "Visual Analysis",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source",
+    "canvas",
+    "coordinate_system",
+    "regions",
+    "observations",
+    "unknowns"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "analysis_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "filename",
+        "sha256",
+        "width_px",
+        "height_px",
+        "normalized",
+        "detected_format",
+        "byte_size",
+        "mode",
+        "normalized_width_px",
+        "normalized_height_px",
+        "exif_orientation",
+        "icc_profile_sha256",
+        "exif_orientation_transform"
+      ],
+      "properties": {
+        "filename": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "width_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "format": {
+          "type": "string"
+        },
+        "exif_orientation": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "normalized": {
+          "type": "boolean"
+        },
+        "supplied_filename": {
+          "type": "string",
+          "minLength": 1
+        },
+        "detected_format": {
+          "type": "string",
+          "minLength": 1
+        },
+        "byte_size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mode": {
+          "type": "string",
+          "minLength": 1
+        },
+        "icc_profile_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "exif_orientation_transform": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "raw_width_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "raw_height_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "normalized_width_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "normalized_height_px": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "canvas": {
+      "type": "object",
+      "required": [
+        "width_px",
+        "height_px"
+      ],
+      "properties": {
+        "width_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "background": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "coordinate_system": {
+      "const": "top-left-origin-pixels"
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/region"
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "evidence_class",
+          "confidence",
+          "value"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "evidence_class": {
+            "enum": [
+              "OBSERVED",
+              "DERIVED",
+              "ESTIMATED",
+              "UNKNOWN"
+            ]
+          },
+          "confidence": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "value": {},
+          "source_tool": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidence_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tool_versions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "bbox": {
+      "type": "object",
+      "required": [
+        "x_min",
+        "y_min",
+        "x_max",
+        "y_max"
+      ],
+      "properties": {
+        "x_min": {
+          "type": "number"
+        },
+        "y_min": {
+          "type": "number"
+        },
+        "x_max": {
+          "type": "number"
+        },
+        "y_max": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "region": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "bbox_px"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "bbox_px": {
+          "$ref": "#/$defs/bbox"
+        },
+        "parent_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "confidence": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0.0",
+  "checkpoint_id": "pp-demo-continuity-001",
+  "project": {
+    "project_id": "poster-demo-001",
+    "name": "Campaign poster reconstruction",
+    "canvas": {
+      "width": 1080,
+      "height": 1350,
+      "unit": "px"
+    },
+    "manifest_version": "1.2.0"
+  },
+  "current_stage": "ASSET_READY",
+  "completion_status": "PARTIAL",
+  "created_at": "2026-11-03T06:00:00Z",
+  "updated_at": "2026-11-03T06:20:00Z",
+  "user_goal": "Reconstruct the supplied poster at exact dimensions and deliver editable HTML/SVG plus a QA report.",
+  "constraints": [
+    "Preserve exact visible copy",
+    "Keep the original reference immutable",
+    "Do not claim pixel-perfect without rendered comparison"
+  ],
+  "source_inputs": [
+    {
+      "input_id": "ref-001",
+      "kind": "reference_image",
+      "description": "Original poster supplied in the current ChatGPT conversation",
+      "availability": "available_in_current_chat",
+      "sensitive": false
+    }
+  ],
+  "stage_ledger": [
+    {
+      "stage": "INTAKE",
+      "status": "COMPLETED",
+      "summary": "Goal, dimensions and deliverables confirmed",
+      "evidence_refs": [
+        "brief-001"
+      ]
+    },
+    {
+      "stage": "FORENSICS",
+      "status": "COMPLETED",
+      "summary": "Visual hierarchy, copy, palette and major geometry recorded",
+      "evidence_refs": [
+        "analysis-001"
+      ]
+    },
+    {
+      "stage": "LAYER_PLAN",
+      "status": "COMPLETED",
+      "summary": "Layer manifest approved and versioned",
+      "evidence_refs": [
+        "manifest-v1.2.0"
+      ]
+    },
+    {
+      "stage": "ASSET_PLAN",
+      "status": "COMPLETED",
+      "summary": "Asset methods and provenance requirements recorded"
+    },
+    {
+      "stage": "ASSET_READY",
+      "status": "BLOCKED",
+      "summary": "Cloudinary transformation endpoint unavailable; continuing with original uploaded files",
+      "failure_reason": "Media transformation service timeout",
+      "fallback_used": true
+    },
+    {
+      "stage": "COMPILE",
+      "status": "NOT_STARTED",
+      "summary": "Awaiting asset substitutes or manual SVG construction"
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "analysis-001",
+      "kind": "analysis",
+      "name": "reference-analysis.json",
+      "availability": "downloadable",
+      "notes": "Manually reviewed analysis; uncertain font IDs remain candidates"
+    },
+    {
+      "artifact_id": "manifest-v1.2.0",
+      "kind": "layer_manifest",
+      "name": "layer-manifest.json",
+      "availability": "downloadable",
+      "notes": "Approved structural manifest"
+    }
+  ],
+  "fallback": {
+    "mode": "MANUAL_CHATGPT",
+    "reason": "Cloudinary media transformation endpoint timed out.",
+    "manual_chatgpt_available": true,
+    "services_unavailable": [
+      "Cloudinary transformations"
+    ],
+    "manual_steps_completed": [
+      "Reused original image in the current conversation",
+      "Preserved approved layer manifest",
+      "Prepared manual SVG and CSS substitution path"
+    ],
+    "limitations": [
+      "No automated Cloudinary transformations",
+      "Perceptual QA remains pending until a render can be produced and inspected"
+    ],
+    "resume_when_available": [
+      "Upload approved derived assets to the media library",
+      "Run automated render and comparison",
+      "Update the checkpoint with new artifact hashes"
+    ]
+  },
+  "open_items": [
+    "Confirm candidate typeface",
+    "Render the HTML/SVG composition",
+    "Run region-weighted visual QA"
+  ],
+  "next_action": "Continue manual asset substitution and compile the composition in the current ChatGPT conversation.",
+  "security_review": {
+    "contains_credentials": false,
+    "contains_private_customer_data": false,
+    "safe_to_share": true,
+    "notes": "No secret values or private asset URLs included."
+  }
+}

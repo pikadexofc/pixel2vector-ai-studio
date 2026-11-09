@@ -1,0 +1,51 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "pixelperfect-studio",
+  "version": "1.0.0",
+  "description": "Turn a flat image into a high-fidelity, editable, fixed-size HTML design. Rebuild meaningful components as separate HTML, CSS, SVG or embedded PNG layers. This is a static design canvas, not a responsive website.",
+  "author": {
+    "name": "PixelPie Media"
+  },
+  "keywords": [
+    "image to HTML",
+    "editable layered design",
+    "visual reconstruction",
+    "poster reconstruction",
+    "layered HTML",
+    "PNG asset generation",
+    "typography extraction",
+    "fixed-size artboard"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/setup/SKILL.md",
+      "interface": {
+        "displayName": "PixelPerfect Studio",
+        "shortDescription": "Image to editable layered HTML",
+        "longDescription": "Upload a poster, graphic, slide, cover or other visual. PixelPerfect Studio studies the reference, separates its meaningful components, recovers typography, extracts source details or creates individual PNG assets, and rebuilds the design on an exact-size fixed artboard. Each component remains separately addressable as an HTML/CSS, SVG or embedded image layer. This is an editable static design canvas, not a responsive website. The customer receives one verified offline-capable standalone HTML file only.",
+        "developerName": "PixelPie Media",
+        "category": "Creativity",
+        "capabilities": [
+          "Convert a flat image into a structured editable HTML design",
+          "Separate meaningful visual components into independent layers",
+          "Extract original image details and generate separate PNG assets when needed",
+          "Recover exact typography or extract source letterforms when necessary",
+          "Preserve the original fixed canvas dimensions and visual composition",
+          "Embed every required asset for offline standalone rendering",
+          "Render, inspect and verify before delivering one final HTML file"
+        ],
+        "defaultPrompt": [
+          "Turn this image into editable layered HTML at its original size. Deliver only the verified standalone HTML.",
+          "Separate each meaningful component. Extract visuals or generate individual PNG assets when needed.",
+          "Find the exact fonts or extract the visible letterforms from the reference."
+        ],
+        "brandColor": "#0B1117",
+        "brandColorDark": "#00D4E3",
+        "logo": "./assets/icon-pack/icon-1024.png",
+        "logoDark": "./assets/icon-pack/icon-1024.png",
+        "composerIcon": "./assets/icon-pack/icon-128.png",
+        "composerIconDark": "./assets/icon-pack/icon-128.png"
+      }
+    }
+  }
+}

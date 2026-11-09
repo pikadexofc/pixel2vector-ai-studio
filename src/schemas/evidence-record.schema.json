@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pixelperfect.studio/schemas/evidence-record.schema.json",
+  "title": "Evidence Record",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "subject_type",
+    "subject_id",
+    "claim",
+    "evidence_type",
+    "source",
+    "created_at",
+    "trust_state"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string"
+    },
+    "subject_type": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "claim": {
+      "type": "string"
+    },
+    "evidence_type": {
+      "enum": [
+        "file-metadata",
+        "hash",
+        "visual-observation",
+        "tool-output",
+        "test-result",
+        "source-record",
+        "human-approval",
+        "other"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "kind",
+        "reference"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "confidence": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "trust_state": {
+      "enum": [
+        "NEW",
+        "TESTED",
+        "VERIFIED",
+        "CANONICAL"
+      ]
+    },
+    "approved_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "supersedes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

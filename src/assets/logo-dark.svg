@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">PixelPerfect Studio</title>
+  <desc id="desc">Nested alignment frames representing measured visual reconstruction.</desc>
+  <rect width="512" height="512" rx="64" fill="#0B1117"/>
+  <g fill="none" stroke="#F5F7F8" stroke-width="18" stroke-linejoin="round">
+    <path d="M112 136h226v226H112z"/>
+    <path d="M174 74h226v226H174z"/>
+  </g>
+  <path d="M174 74h226v62H174z" fill="#00D4E3"/>
+  <path d="M338 136h62v164h-62z" fill="#00D4E3"/>
+  <path d="M112 362h226" stroke="#F5F7F8" stroke-width="18" stroke-linecap="square"/>
+  <circle cx="338" cy="362" r="18" fill="#00D4E3" stroke="#0B1117" stroke-width="8"/>
+</svg>

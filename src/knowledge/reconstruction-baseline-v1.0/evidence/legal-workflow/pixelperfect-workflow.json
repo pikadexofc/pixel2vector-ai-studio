@@ -1,0 +1,661 @@
+{
+  "workflow_name": "PixelPerfect Studio Multi-Stage Visual Reconstruction",
+  "workflow_version": "1.0",
+  "export_type": "executed_workflow_record",
+  "execution_date": "2026-11-03",
+  "objective": "Reconstruct the supplied legal presentation cover as a fixed-size, non-responsive, offline-capable HTML artboard with independently addressable visual layers and a synchronized layer manifest.",
+  "input": {
+    "reference_file": "1000154784.png",
+    "dimensions": {
+      "width": 1536,
+      "height": 864,
+      "mode": "RGB",
+      "format": "JPEG"
+    },
+    "sha256": "ae6ab548ff9e941be49a73081af651b374e54b0bcc3be5dc980b4ebc60ee2425",
+    "canvas": {
+      "width": 1536,
+      "height": 864,
+      "unit": "px",
+      "aspect_ratio": "16:9"
+    },
+    "coordinate_system": {
+      "origin": "top-left",
+      "units": "CSS pixels",
+      "positioning": "absolute relative to fixed artboard"
+    }
+  },
+  "tool_and_capability_discovery": {
+    "image_generation": "ChatGPT ImageGen, used to generate independent photographic assets and visual explorations.",
+    "image_processing": "Local Python/Pillow processing used for image dimensions, alpha-aware asset preparation, embedding and file validation.",
+    "html_css": "Standalone HTML and CSS implementation with inline SVG for vectors and circuitry.",
+    "font_handling": "Locally available GFS Didot and Inter font files embedded into the HTML as data URIs.",
+    "browser_rendering": "Chromium rendering, recorded by the layer manifest QA metadata.",
+    "external_runtime_dependencies": [],
+    "capability_notes": "No third-party asset library or remote font/image URL is required by the final HTML."
+  },
+  "executed_workflow": [
+    {
+      "phase": 0,
+      "name": "Tool and plugin discovery",
+      "status": "completed",
+      "actions": [
+        "Reviewed available image generation, file processing, coding and browser/rendering capabilities.",
+        "Selected image generation for photographic subjects, local processing for asset preparation, HTML/CSS for composition and inline SVG for vector details.",
+        "Avoided remote runtime assets to satisfy offline operation."
+      ],
+      "outputs": [
+        "tool selection decisions recorded in this workflow"
+      ]
+    },
+    {
+      "phase": 1,
+      "name": "Reference forensics and decomposition",
+      "status": "completed",
+      "actions": [
+        "Inspected the supplied reference at its native 1536 by 864 pixel resolution.",
+        "Identified the deep oxblood editorial background, cream typography, gold accents, central courthouse architecture, brass justice scale, law books, stone platforms, right-side steps and AI circuit/network decoration.",
+        "Separated editable text and vector structures from photographic image subjects.",
+        "Used the supplied text content verbatim: LEGAL SYSTEMS IN TRANSITION; HOW AI AFFECTS CIVIL LAW; subtitle; presenter Aqsa; instructor Kazi Afzal Sir."
+      ],
+      "design_system": {
+        "primary_palette": {
+          "oxblood": "deep burgundy / oxblood",
+          "cream": "warm ivory",
+          "gold": "muted antique gold",
+          "stone": "warm beige limestone",
+          "bronze": "aged bronze"
+        },
+        "visual_style": "cinematic editorial legal technology cover, warm sepia architecture, antique metallic subject, restrained circuit geometry",
+        "hierarchy": [
+          "eyebrow label",
+          "three-line serif headline",
+          "supporting subtitle with accent bar",
+          "right-side visual centerpiece",
+          "footer presenter and instructor credits"
+        ]
+      }
+    },
+    {
+      "phase": 2,
+      "name": "Layer mapping and manifest specification",
+      "status": "completed",
+      "actions": [
+        "Created 35 independently addressable layer records.",
+        "Assigned absolute X, Y, width and height coordinates relative to the 1536 by 864 artboard.",
+        "Recorded layer IDs, names, groups, production methods, z-index, opacity and other relevant styling metadata.",
+        "Documented asset provenance, embedded dimensions, file hashes and QA notes."
+      ],
+      "groups": [
+        {
+          "id": "BACKGROUND",
+          "name": "Background and panels",
+          "z_range": [
+            0,
+            6
+          ]
+        },
+        {
+          "id": "BACKDROP",
+          "name": "Atmospheric overlays",
+          "z_range": [
+            60,
+            60
+          ]
+        },
+        {
+          "id": "DECORATION",
+          "name": "Orbital and AI circuitry",
+          "z_range": [
+            5,
+            25
+          ]
+        },
+        {
+          "id": "IMAGERY",
+          "name": "Generated photographic assets",
+          "z_range": [
+            4,
+            18
+          ]
+        },
+        {
+          "id": "SHAPES",
+          "name": "Stone platforms and dividers",
+          "z_range": [
+            9,
+            35
+          ]
+        },
+        {
+          "id": "TYPOGRAPHY",
+          "name": "Editable text",
+          "z_range": [
+            30,
+            35
+          ]
+        }
+      ],
+      "layer_count": 35,
+      "layer_ids": [
+        "BG_001",
+        "BG_002",
+        "BG_003",
+        "BG_004",
+        "BG_005",
+        "BG_006",
+        "IMG_001",
+        "IMG_001_OVERLAY",
+        "DEC_001",
+        "SH_001",
+        "SH_002",
+        "SH_003",
+        "STAIR_001",
+        "STAIR_002",
+        "STAIR_003",
+        "STAIR_004",
+        "STAIR_005",
+        "STAIR_006",
+        "IMG_002",
+        "IMG_003",
+        "DEC_002",
+        "DEC_003",
+        "TXT_001",
+        "SH_004",
+        "TXT_002",
+        "SH_005",
+        "TXT_003",
+        "SH_006",
+        "TXT_004",
+        "TXT_005",
+        "SH_007",
+        "TXT_006",
+        "TXT_007",
+        "DEC_004",
+        "FX_001"
+      ],
+      "manifest_file": "layer-manifest.json"
+    },
+    {
+      "phase": 3,
+      "name": "Asset production strategy",
+      "status": "completed",
+      "decisions": [
+        {
+          "component": "courthouse backdrop",
+          "method": "GENERATE",
+          "reason": "Architectural photographic detail and atmospheric perspective are better represented by a dedicated generated image."
+        },
+        {
+          "component": "antique law books",
+          "method": "GENERATE",
+          "reason": "A realistic isolated still-life is required; independent transparent asset preserves the silhouette."
+        },
+        {
+          "component": "brass justice scale",
+          "method": "GENERATE",
+          "reason": "Complex metallic object, relief details and realistic lighting require a photographic asset."
+        },
+        {
+          "component": "background panels and geometric blocks",
+          "method": "CODE",
+          "reason": "Deterministic rectangles, gradients and clipping are more accurate and editable in CSS."
+        },
+        {
+          "component": "orbital arc, circuit paths and AI neural mesh",
+          "method": "SVG",
+          "reason": "Thin lines, nodes and geometry need crisp scalable vector rendering."
+        },
+        {
+          "component": "headlines, subtitle and footer credits",
+          "method": "TYPOGRAPHY",
+          "reason": "Text must remain selectable and editable HTML text."
+        },
+        {
+          "component": "stone platforms and staircase",
+          "method": "SVG/CODE",
+          "reason": "Independent shapes and texture treatments are more controllable as vector/CSS layers than as another flattened image."
+        }
+      ],
+      "image_generation_outputs": [
+        {
+          "sequence": 1,
+          "file": "a_dramatic_moody_architectural_scene_of_a_classic.png",
+          "description": "Initial courthouse architecture exploration.",
+          "dimensions": {
+            "width": 1086,
+            "height": 1448,
+            "mode": "RGB",
+            "format": "PNG"
+          },
+          "disposition": "rejected_variant",
+          "reason": "Superseded by the selected courthouse backdrop with a closer composition and warmer tonal match."
+        },
+        {
+          "sequence": 2,
+          "file": "a_dramatic_cinematic_architectural_photograph_of.png",
+          "description": "Courthouse environment asset.",
+          "dimensions": {
+            "width": 1230,
+            "height": 1278,
+            "mode": "RGB",
+            "format": "PNG"
+          },
+          "disposition": "selected_and_embedded",
+          "layer_id": "IMG_001",
+          "asset_id": "ASSET_001"
+        },
+        {
+          "sequence": 3,
+          "file": "a_highly_detailed_photorealistic_ornate_antique_b.png",
+          "description": "First ornate scale study, with a dark background rather than a clean isolated cutout.",
+          "dimensions": {
+            "width": 1104,
+            "height": 1424,
+            "mode": "RGBA",
+            "format": "PNG"
+          },
+          "disposition": "rejected_variant",
+          "reason": "Replaced with a transparent-background isolated scale to support independent layering."
+        },
+        {
+          "sequence": 4,
+          "file": "a_detailed_photorealistic_graphic_poster_in_rich.png",
+          "description": "Full poster composition exploration.",
+          "dimensions": {
+            "width": 1672,
+            "height": 941,
+            "mode": "RGBA",
+            "format": "PNG"
+          },
+          "disposition": "rejected_as_flattened_composite",
+          "reason": "The required output keeps text and visual components as independent HTML, CSS, SVG and image layers."
+        },
+        {
+          "sequence": 5,
+          "file": "a_single_isolated_ornate_brass_gold_justice_scale.png",
+          "description": "Isolated ornate brass justice scale with transparent background.",
+          "dimensions": {
+            "width": 1199,
+            "height": 1312,
+            "mode": "RGBA",
+            "format": "PNG"
+          },
+          "disposition": "selected_and_embedded",
+          "layer_id": "IMG_003",
+          "asset_id": "ASSET_003"
+        },
+        {
+          "sequence": 6,
+          "file": "a_high_fidelity_graphic_poster_slide_matching_the.png",
+          "description": "Full poster composition exploration.",
+          "dimensions": {
+            "width": 1672,
+            "height": 941,
+            "mode": "RGBA",
+            "format": "PNG"
+          },
+          "disposition": "rejected_as_flattened_composite",
+          "reason": "Not used as the implementation asset; the design was reconstructed with independently editable layers."
+        },
+        {
+          "sequence": 7,
+          "file": "a_high_quality_photo_realistic_graphic_poster_mat.png",
+          "description": "Additional full poster composition exploration.",
+          "dimensions": {
+            "width": 1672,
+            "height": 941,
+            "mode": "RGBA",
+            "format": "PNG"
+          },
+          "disposition": "rejected_as_flattened_composite",
+          "reason": "Not used as the implementation asset; the design was reconstructed with independently editable layers."
+        },
+        {
+          "sequence": 8,
+          "file": "a_photorealistic_isolated_still_life_on_a_transpar.png",
+          "description": "Transparent still-life of two antique burgundy legal books.",
+          "dimensions": {
+            "width": 1774,
+            "height": 887,
+            "mode": "RGBA",
+            "format": "PNG"
+          },
+          "disposition": "selected_and_embedded",
+          "layer_id": "IMG_002",
+          "asset_id": "ASSET_002"
+        }
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "Asset processing and collection",
+      "status": "completed",
+      "selected_assets": [
+        {
+          "id": "ASSET_001",
+          "layer_id": "IMG_001",
+          "filename": "courthouse.webp",
+          "method": "image_generation",
+          "source": "ChatGPT ImageGen, 2026-11-03",
+          "source_asset": "a_dramatic_cinematic_architectural_photograph_of.png",
+          "dimensions": {
+            "width": 1230,
+            "height": 1278
+          },
+          "embedded_dimensions": {
+            "width": 1230,
+            "height": 1278
+          },
+          "format": "image/webp",
+          "transparency": false,
+          "license": "AI-generated asset; no third-party source license applicable",
+          "sha256": "d7d6d8c3bd8287e7b964b677df17fcbf1d0a1a13e517df51dd7d9817cd2e0fb2",
+          "qa": "Reviewed visually; warm sepia architectural crop, no text or watermark."
+        },
+        {
+          "id": "ASSET_002",
+          "layer_id": "IMG_002",
+          "filename": "law-books.webp",
+          "method": "image_generation",
+          "source": "ChatGPT ImageGen, 2026-11-03",
+          "source_asset": "a_photorealistic_isolated_still_life_on_a_transpar.png",
+          "dimensions": {
+            "width": 1754,
+            "height": 866
+          },
+          "embedded_dimensions": {
+            "width": 1754,
+            "height": 866
+          },
+          "format": "image/webp",
+          "transparency": true,
+          "license": "AI-generated asset; no third-party source license applicable",
+          "sha256": "2682673db8059d8298016ce453b12c427b171c2e97f8b3e0ffc97b857011892d",
+          "qa": "Alpha-trimmed transparent cutout; no visible text; edge quality reviewed."
+        },
+        {
+          "id": "ASSET_003",
+          "layer_id": "IMG_003",
+          "filename": "justice-scale.webp",
+          "method": "image_generation",
+          "source": "ChatGPT ImageGen, 2026-11-03",
+          "source_asset": "a_single_isolated_ornate_brass_gold_justice_scale.png",
+          "dimensions": {
+            "width": 1158,
+            "height": 1273
+          },
+          "embedded_dimensions": {
+            "width": 1158,
+            "height": 1273
+          },
+          "format": "image/webp",
+          "transparency": true,
+          "license": "AI-generated asset; no third-party source license applicable",
+          "sha256": "83c2fa78771143fdde8c851c022336b434f99351db9fff91c68a4d70b999ccc9",
+          "qa": "Alpha-trimmed isolated RGBA subject; low-alpha red edge contamination removed; metallic contours visually reviewed."
+        },
+        {
+          "id": "FONT_001",
+          "layer_id": "TXT_002",
+          "filename": "GFSDidot.otf",
+          "method": "local_font_embedding",
+          "source": "Installed GFS Didot typeface",
+          "format": "OpenType",
+          "license": "GFS Didot font license; embedded for offline rendering",
+          "sha256": "27d80cbfb7446a627f577b3a3bc519e1cec71d53328cd3873368e9c3b54e0fc1"
+        },
+        {
+          "id": "FONT_003",
+          "layer_id": "TXT_002",
+          "filename": "GFSDidotBold.otf",
+          "method": "local_font_embedding",
+          "source": "Installed GFS Didot Bold typeface",
+          "format": "OpenType",
+          "license": "GFS Didot font license; embedded for offline rendering",
+          "sha256": "8f1febc6e7088c6721c968056f2600f6a1e8b591fd8e686df8b4de19f3ee435c"
+        },
+        {
+          "id": "FONT_002",
+          "layer_id": "TXT_001,TXT_003,TXT_004,TXT_005,TXT_006,TXT_007",
+          "filename": "Inter-Regular.otf and Inter-SemiBold.otf",
+          "method": "local_font_embedding",
+          "source": "Installed Inter typeface",
+          "format": "OpenType",
+          "license": "SIL Open Font License",
+          "sha256": "d4f2b9e148059a15f014cb0f0b8fea8cd11bfa447dd483bedf1b0adc0e2ba799",
+          "additional_sha256": "0a4d30778fa2dc239368d90fd854b88b27e7ede737450da72686a90eca66f02c"
+        }
+      ],
+      "actions": [
+        "Selected one courthouse image, one transparent law-books cutout and one transparent justice-scale cutout.",
+        "Reviewed generated images for crop suitability, background separation, visible artefacts and compositional fit.",
+        "Prepared transparent cutouts for use as independent layers.",
+        "Converted selected raster assets to embedded WebP data URIs for the standalone HTML.",
+        "Embedded required local font files as font data URIs."
+      ],
+      "rejected_asset_policy": "Full poster generations were kept out of the implementation because they flatten text and image content into one non-editable composition. Earlier subject variants were superseded by better isolated or more compositionally suitable assets."
+    },
+    {
+      "phase": 5,
+      "name": "Artboard assembly",
+      "status": "completed",
+      "actions": [
+        "Created a fixed 1536 by 864 pixel artboard.",
+        "Placed every visual layer using explicit coordinates and stacking order.",
+        "Layered the courthouse behind the foreground scale and books.",
+        "Built the AI traces and neural mesh as vector elements.",
+        "Constructed the stone platforms and six individual stair treads as independently addressable geometry.",
+        "Added restrained vignette and grain overlays to unify the composition."
+      ],
+      "layer_implementation": "Every manifest layer ID is represented as a corresponding data-layer attribute in the HTML."
+    },
+    {
+      "phase": 6,
+      "name": "HTML and CSS implementation",
+      "status": "completed",
+      "actions": [
+        "Built a single fixed-size artboard using semantic HTML containers and absolute positioning.",
+        "Used CSS for panels, fills, gradients, dividers, text placement and stacking.",
+        "Used inline SVG for orbital, circuitry, neural mesh and fine decorative paths.",
+        "Kept all meaningful text as HTML text.",
+        "Embedded all image and font resources directly into the HTML as data URIs.",
+        "Avoided external scripts, stylesheets, image requests and runtime dependencies."
+      ],
+      "output_file": "index.html",
+      "html_bytes": 3401946,
+      "embedded_image_data_uri_count": 3,
+      "embedded_font_data_uri_count": 4,
+      "font_face_count": 4,
+      "responsive": false,
+      "javascript_required": false
+    },
+    {
+      "phase": 7,
+      "name": "Visual quality assurance",
+      "status": "completed_as_recorded_in_manifest",
+      "render_target": {
+        "width": 1536,
+        "height": 864,
+        "browser": "Chromium"
+      },
+      "passes": [
+        {
+          "pass": 1,
+          "name": "Structure",
+          "status": "passed",
+          "focus": [
+            "canvas dimensions",
+            "coordinates",
+            "layer order",
+            "spacing",
+            "proportions",
+            "alignment"
+          ],
+          "render_file": "pixelperfect_work/render-pass1.png"
+        },
+        {
+          "pass": 2,
+          "name": "Styling",
+          "status": "passed",
+          "focus": [
+            "typography",
+            "palette",
+            "asset crop",
+            "shadows",
+            "borders",
+            "gradients",
+            "texture"
+          ],
+          "render_file": "pixelperfect_work/render-pass2.png"
+        },
+        {
+          "pass": 3,
+          "name": "Fidelity and finishing",
+          "status": "passed",
+          "focus": [
+            "optical balance",
+            "small alignment corrections",
+            "edge precision",
+            "asset quality",
+            "overall composition"
+          ],
+          "render_file": "pixelperfect_work/render-final-qa.png"
+        }
+      ],
+      "render_files": [
+        {
+          "file": "pixelperfect_work/render-pass1.png",
+          "stage": "structure_review",
+          "dimensions": {
+            "width": 1536,
+            "height": 864,
+            "mode": "RGB",
+            "format": "PNG"
+          },
+          "bytes": 1702351,
+          "sha256": "b023aa03ac8cf487b22cb1fd81082f1dc218b45525722978121163f43447f06e"
+        },
+        {
+          "file": "pixelperfect_work/render-pass2.png",
+          "stage": "styling_review",
+          "dimensions": {
+            "width": 1536,
+            "height": 864,
+            "mode": "RGB",
+            "format": "PNG"
+          },
+          "bytes": 1660187,
+          "sha256": "ada268130b16641abec9b023a23701c29f58b436f1c3d3342400298384ea7187"
+        },
+        {
+          "file": "pixelperfect_work/render-final-qa.png",
+          "stage": "fidelity_review",
+          "dimensions": {
+            "width": 1536,
+            "height": 864,
+            "mode": "RGB",
+            "format": "PNG"
+          },
+          "bytes": 1573521,
+          "sha256": "e65d2e5c9c4a6e58aba0b15eaccd2d8be25ef37b13e41234bb3a2451745146ee"
+        },
+        {
+          "file": "pixelperfect_work/render-verified.png",
+          "stage": "verification_capture",
+          "dimensions": {
+            "width": 1536,
+            "height": 864,
+            "mode": "RGB",
+            "format": "PNG"
+          },
+          "bytes": 1572255,
+          "sha256": "4c7e7887548b96afa293dcbe0643483f955143eca417fa933927ca844ccd3bc5"
+        },
+        {
+          "file": "pixelperfect_work/render-final2.png",
+          "stage": "final_capture",
+          "dimensions": {
+            "width": 1536,
+            "height": 864,
+            "mode": "RGB",
+            "format": "PNG"
+          },
+          "bytes": 1572255,
+          "sha256": "4c7e7887548b96afa293dcbe0643483f955143eca417fa933927ca844ccd3bc5"
+        }
+      ],
+      "reported_refinements": [
+        "Adjusted the courthouse visual treatment to sit more naturally in the warm, subdued background.",
+        "Tightened the book and lower platform proportions.",
+        "Separated the right-side stone staircase into six individually documented tread layers."
+      ],
+      "comparison_limitations": "The visual review was performed on rendered screenshots. No numerical SSIM, MAE or pixel-difference score is claimed in the source manifest; the finished work is a high-fidelity reconstruction, not a pixel-identical extraction."
+    },
+    {
+      "phase": 8,
+      "name": "Final validation and delivery",
+      "status": "completed",
+      "checks": [
+        {
+          "check": "reference dimensions",
+          "status": "passed",
+          "evidence": "1536 x 864 input image and fixed artboard metadata."
+        },
+        {
+          "check": "manifest layer mapping",
+          "status": "passed",
+          "evidence": "35 manifest layer IDs and 35 unique HTML data-layer IDs; exact set equality: True."
+        },
+        {
+          "check": "offline image and font embedding",
+          "status": "passed",
+          "evidence": "3 embedded image data URIs and 4 embedded font data URIs."
+        },
+        {
+          "check": "external runtime dependencies",
+          "status": "passed",
+          "evidence": []
+        },
+        {
+          "check": "HTML standalone file",
+          "status": "passed",
+          "evidence": "3401946 bytes."
+        },
+        {
+          "check": "layer manifest JSON",
+          "status": "passed",
+          "evidence": "Parsed successfully as JSON."
+        }
+      ],
+      "deliverables": [
+        "index.html",
+        "layer-manifest.json"
+      ]
+    }
+  ],
+  "final_artifact_inventory": {
+    "index_html": {
+      "file": "index.html",
+      "bytes": 3401946,
+      "sha256": "d737ba40d7e42f82ad22ff00db7d9a4576345cb39b302d5e730e4aafd598d3ff",
+      "standalone_offline": true
+    },
+    "layer_manifest": {
+      "file": "layer-manifest.json",
+      "bytes": 37190,
+      "sha256": "83dbcd018dcc0a92eb8e9386b7fe3a2d06bd7fc3640840884de8c68fe0d43035",
+      "layer_count": 35
+    }
+  },
+  "known_limitations": [
+    "Generated photographic assets are approximations of the pictured objects, not extracted pixels from the reference.",
+    "The output is visually reconstructed and editable, but is not guaranteed to be pixel-for-pixel identical to the supplied raster.",
+    "The recorded QA evidence documents three render review passes; no numerical pixel similarity score is asserted."
+  ],
+  "reproduction_instructions": [
+    "Keep index.html and layer-manifest.json together for documentation and traceability; index.html itself is self-contained.",
+    "Open index.html in a modern browser. The artboard remains 1536 by 864 CSS pixels and does not responsively reflow.",
+    "Use layer-manifest.json as the source of truth for layer IDs, positions, groups, production methods and asset provenance."
+  ]
+}

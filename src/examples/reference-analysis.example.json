@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "analysis_id": "analysis-example-001",
+  "project_id": "project-example-001",
+  "source": {
+    "filename": "reference.png",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "width_px": 1200,
+    "height_px": 1500,
+    "format": "PNG",
+    "exif_orientation": 1,
+    "normalized": true,
+    "supplied_filename": "reference.png",
+    "detected_format": "PNG",
+    "byte_size": 384000,
+    "mode": "RGB",
+    "icc_profile_sha256": null,
+    "exif_orientation_transform": null,
+    "raw_width_px": 1200,
+    "raw_height_px": 1500,
+    "normalized_width_px": 1200,
+    "normalized_height_px": 1500
+  },
+  "canvas": {
+    "width_px": 1200,
+    "height_px": 1500,
+    "background": "#111820"
+  },
+  "coordinate_system": "top-left-origin-pixels",
+  "regions": [
+    {
+      "id": "region-title",
+      "kind": "text",
+      "bbox_px": {
+        "x_min": 80,
+        "y_min": 90,
+        "x_max": 1120,
+        "y_max": 260
+      },
+      "parent_id": null,
+      "confidence": 0.97,
+      "notes": [
+        "Large centered title block"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-title-text",
+      "kind": "ocr-text",
+      "evidence_class": "OBSERVED",
+      "confidence": 0.99,
+      "value": "EXAMPLE TITLE",
+      "source_tool": "OCR engine/version must be recorded",
+      "evidence_ref": "region-title"
+    },
+    {
+      "id": "obs-font",
+      "kind": "font-family",
+      "evidence_class": "ESTIMATED",
+      "confidence": 0.62,
+      "value": {
+        "candidates": [
+          "Candidate A",
+          "Candidate B"
+        ]
+      },
+      "source_tool": "visual analyst",
+      "evidence_ref": "region-title"
+    }
+  ],
+  "unknowns": [
+    "Exact font family is not confirmed"
+  ]
+}

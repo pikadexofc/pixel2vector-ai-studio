@@ -1,0 +1,23 @@
+﻿{
+  "name": "pixel2vector-ai-studio",
+  "version": "1.0.0",
+  "description": "High-fidelity AI pixel-to-vector converter, live DOM-to-Illustrator vectorizer, and design system intelligence studio by Pickko.",
+  "main": "index.html",
+  "keywords": [
+    "pixel-to-vector",
+    "image-to-vector",
+    "vectorizer-ai",
+    "raster-to-vector",
+    "html-to-illustrator",
+    "svg-converter",
+    "bezier-math",
+    "design-tokens"
+  ],
+  "author": "Pickko",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx serve .",
+    "test": "python -m pytest tests/",
+    "validate": "python src/scripts/validate_plugin.py"
+  }
+}

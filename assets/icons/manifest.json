@@ -1,0 +1,25 @@
+{
+  "name": "Visual Reconstruction Plugin Icon",
+  "version": "1.0.1",
+  "master": "icon.svg",
+  "png_sizes_px": [
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128,
+    180,
+    192,
+    256,
+    512,
+    1024
+  ],
+  "favicon": "favicon.ico",
+  "recommended": {
+    "small_icon": "icon-48.png",
+    "large_icon": "icon-128.png",
+    "app_icon": "icon-512.png"
+  }
+}

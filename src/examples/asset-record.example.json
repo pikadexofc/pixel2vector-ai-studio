@@ -1,0 +1,38 @@
+{
+  "asset_id": "asset-example-001",
+  "kind": "image",
+  "filename": "subject-cutout.png",
+  "mime_type": "image/png",
+  "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "perceptual_hash": null,
+  "dimensions": {
+    "width_px": 1600,
+    "height_px": 2000,
+    "alpha": true,
+    "colour_space": "sRGB"
+  },
+  "provenance": {
+    "type": "user-provided",
+    "source_url": null,
+    "creator": "User supplied",
+    "retrieved_at": null,
+    "generation_prompt": null,
+    "tool_model": null,
+    "parent_asset_id": null
+  },
+  "rights_status": "verified",
+  "license": {
+    "id": "user-provided-permission",
+    "url": null,
+    "attribution": null,
+    "permitted_use": [
+      "Use within named project as instructed"
+    ],
+    "restrictions": []
+  },
+  "project_id": "project-example-001",
+  "layer_id": "portrait",
+  "variant_of": null,
+  "processing_history": [],
+  "validation_status": "inspected"
+}

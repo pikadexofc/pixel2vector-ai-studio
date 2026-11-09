@@ -1,0 +1,203 @@
+{
+  "project_id": "ATN-2026-001",
+  "assets": [
+    {
+      "asset_id": "ASSET-ATN-001",
+      "name": "concrete_diagonal_beam",
+      "role": "concrete diagonal beam",
+      "method": "SOURCE",
+      "parent_reference": "ATN-2026-001",
+      "source_sha256": "1d9b0fda4d1c6972c7718574d40a891347c255d3d294d486cf75dedcc79a3a5c",
+      "source_bbox": [
+        230,
+        0,
+        941,
+        404
+      ],
+      "output_dimensions_px": [
+        711,
+        404
+      ],
+      "output_sha256": "25d9cc1e58616b06ef9f5fae4ad8a66a08e7081c12bead307a414a913c4ff051",
+      "transformation": "polygon alpha mask; antialiased at 3x and reduced; 0.5 px mask feather",
+      "rights_status": "USER_PROVIDED_REFERENCE_ONLY",
+      "validation": "HASHED_AND_RENDERED"
+    },
+    {
+      "asset_id": "ASSET-ATN-002",
+      "name": "right_upper_arch",
+      "role": "right upper arch",
+      "method": "SOURCE",
+      "parent_reference": "ATN-2026-001",
+      "source_sha256": "1d9b0fda4d1c6972c7718574d40a891347c255d3d294d486cf75dedcc79a3a5c",
+      "source_bbox": [
+        933,
+        129,
+        1498,
+        397
+      ],
+      "output_dimensions_px": [
+        565,
+        268
+      ],
+      "output_sha256": "5fa52d92770942425fbd5b89c423a4760f2c11156be2047e456153fbb9332ef9",
+      "transformation": "polygon alpha mask; antialiased at 3x and reduced; 0.5 px mask feather",
+      "rights_status": "USER_PROVIDED_REFERENCE_ONLY",
+      "validation": "HASHED_AND_RENDERED"
+    },
+    {
+      "asset_id": "ASSET-ATN-003",
+      "name": "right_support_column",
+      "role": "right support column",
+      "method": "SOURCE",
+      "parent_reference": "ATN-2026-001",
+      "source_sha256": "1d9b0fda4d1c6972c7718574d40a891347c255d3d294d486cf75dedcc79a3a5c",
+      "source_bbox": [
+        933,
+        149,
+        1086,
+        413
+      ],
+      "output_dimensions_px": [
+        153,
+        264
+      ],
+      "output_sha256": "269332802b4e0fedf2df0155c71d51ab0f57e5770bf45f01fa01b409936eeb41",
+      "transformation": "polygon alpha mask; antialiased at 3x and reduced; 0.5 px mask feather",
+      "rights_status": "USER_PROVIDED_REFERENCE_ONLY",
+      "validation": "HASHED_AND_RENDERED"
+    },
+    {
+      "asset_id": "ASSET-ATN-004",
+      "name": "staircase",
+      "role": "staircase",
+      "method": "SOURCE",
+      "parent_reference": "ATN-2026-001",
+      "source_sha256": "1d9b0fda4d1c6972c7718574d40a891347c255d3d294d486cf75dedcc79a3a5c",
+      "source_bbox": [
+        1024,
+        379,
+        1536,
+        569
+      ],
+      "output_dimensions_px": [
+        512,
+        190
+      ],
+      "output_sha256": "8a853880c5aad40e96888e34fc00ba1e520182c50a8e17fa008a79fa06e14c6c",
+      "transformation": "polygon alpha mask; antialiased at 3x and reduced; 0.5 px mask feather",
+      "rights_status": "USER_PROVIDED_REFERENCE_ONLY",
+      "validation": "HASHED_AND_RENDERED"
+    },
+    {
+      "asset_id": "ASSET-ATN-005",
+      "name": "foreground_concrete_beam",
+      "role": "foreground concrete beam",
+      "method": "SOURCE",
+      "parent_reference": "ATN-2026-001",
+      "source_sha256": "1d9b0fda4d1c6972c7718574d40a891347c255d3d294d486cf75dedcc79a3a5c",
+      "source_bbox": [
+        274,
+        380,
+        1041,
+        553
+      ],
+      "output_dimensions_px": [
+        767,
+        173
+      ],
+      "output_sha256": "662d305b2a38c21e2f697bb2b99f26078a2b5de578ef5ed96ff19951c4751253",
+      "transformation": "polygon alpha mask; antialiased at 3x and reduced; 0.5 px mask feather",
+      "rights_status": "USER_PROVIDED_REFERENCE_ONLY",
+      "validation": "HASHED_AND_RENDERED"
+    },
+    {
+      "asset_id": "ASSET-ATN-006",
+      "name": "lower_right_concrete_face",
+      "role": "lower right concrete face",
+      "method": "SOURCE",
+      "parent_reference": "ATN-2026-001",
+      "source_sha256": "1d9b0fda4d1c6972c7718574d40a891347c255d3d294d486cf75dedcc79a3a5c",
+      "source_bbox": [
+        1015,
+        379,
+        1135,
+        477
+      ],
+      "output_dimensions_px": [
+        120,
+        98
+      ],
+      "output_sha256": "c61dd41d9b8ba8d21ec9f5bd640b6d59788f51fa5803dc330b4baf9e02fa729d",
+      "transformation": "polygon alpha mask; antialiased at 3x and reduced; 0.5 px mask feather",
+      "rights_status": "USER_PROVIDED_REFERENCE_ONLY",
+      "validation": "HASHED_AND_RENDERED"
+    },
+    {
+      "asset_id": "ASSET-ATN-007",
+      "name": "right_outer_pillar",
+      "role": "right outer pillar",
+      "method": "SOURCE",
+      "parent_reference": "ATN-2026-001",
+      "source_sha256": "1d9b0fda4d1c6972c7718574d40a891347c255d3d294d486cf75dedcc79a3a5c",
+      "source_bbox": [
+        1433,
+        129,
+        1536,
+        435
+      ],
+      "output_dimensions_px": [
+        103,
+        306
+      ],
+      "output_sha256": "fb93096478a6d92f93d83958b83f93f4b447e45b9388a9a4baf3145ea2ffe0ab",
+      "transformation": "polygon alpha mask; antialiased at 3x and reduced; 0.5 px mask feather",
+      "rights_status": "USER_PROVIDED_REFERENCE_ONLY",
+      "validation": "HASHED_AND_RENDERED"
+    },
+    {
+      "asset_id": "ASSET-ATN-008",
+      "name": "top_left_paper_tear",
+      "role": "top left paper tear",
+      "method": "SOURCE",
+      "parent_reference": "ATN-2026-001",
+      "source_sha256": "1d9b0fda4d1c6972c7718574d40a891347c255d3d294d486cf75dedcc79a3a5c",
+      "source_bbox": [
+        47,
+        0,
+        275,
+        76
+      ],
+      "output_dimensions_px": [
+        228,
+        76
+      ],
+      "output_sha256": "0dc36ae0b80f9dabb374fb37cdee57e69f935d9cd48a2ba375557d10dc6010df",
+      "transformation": "polygon alpha mask; antialiased at 3x and reduced; 0.5 px mask feather",
+      "rights_status": "USER_PROVIDED_REFERENCE_ONLY",
+      "validation": "HASHED_AND_RENDERED"
+    },
+    {
+      "asset_id": "ASSET-ATN-009",
+      "name": "bottom_left_paper_tear",
+      "role": "bottom left paper tear",
+      "method": "SOURCE",
+      "parent_reference": "ATN-2026-001",
+      "source_sha256": "1d9b0fda4d1c6972c7718574d40a891347c255d3d294d486cf75dedcc79a3a5c",
+      "source_bbox": [
+        0,
+        418,
+        281,
+        569
+      ],
+      "output_dimensions_px": [
+        281,
+        151
+      ],
+      "output_sha256": "34f543d8f3f3491285fd9189b7ef99c2e9ad07d0bce4dd17d1db490c31d699f2",
+      "transformation": "polygon alpha mask; antialiased at 3x and reduced; 0.5 px mask feather",
+      "rights_status": "USER_PROVIDED_REFERENCE_ONLY",
+      "validation": "HASHED_AND_RENDERED"
+    }
+  ]
+}

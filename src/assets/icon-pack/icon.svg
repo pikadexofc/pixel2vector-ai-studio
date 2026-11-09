@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1248 1248" role="img" aria-labelledby="title desc">
+<title id="title">Visual Reconstruction</title>
+<desc id="desc">Three precise geometric planes converge into a single pixel on a royal purple and deep blue gradient.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#8B00F5"/><stop offset=".38" stop-color="#3500B5"/><stop offset=".72" stop-color="#071A9A"/><stop offset="1" stop-color="#078BFA"/>
+ </linearGradient>
+ <linearGradient id="white" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#FFFFFF"/><stop offset=".55" stop-color="#F4F0FF"/><stop offset="1" stop-color="#B9A7FF"/>
+ </linearGradient>
+ <linearGradient id="top" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#B5A1FF"/>
+ </linearGradient>
+ <linearGradient id="mid" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#F0EAFF"/><stop offset="1" stop-color="#9275F5"/>
+ </linearGradient>
+ <radialGradient id="shade"><stop offset=".62" stop-color="#08002B" stop-opacity="0"/><stop offset="1" stop-color="#08002B" stop-opacity=".30"/></radialGradient>
+ <filter id="glow" x="-150%" y="-150%" width="400%" height="400%">
+  <feGaussianBlur stdDeviation="12" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+ </filter>
+ <clipPath id="clip"><rect width="1248" height="1248" rx="112"/></clipPath>
+</defs>
+<g clip-path="url(#clip)">
+ <rect width="1248" height="1248" fill="url(#bg)"/>
+ <rect width="1248" height="1248" fill="url(#shade)"/>
+ <!-- Three-layer outer frame, with a true open center -->
+ <path fill="url(#white)" fill-rule="evenodd" d="
+  M318 306 L846 580 L846 668 L318 944 Z
+  M426 466 L846 596 L846 652 L426 790 Z"/>
+ <!-- Upper independent plane -->
+ <path fill="url(#top)" d="M514 213 Q500 213 500 229 L500 351 Q500 361 510 367 L846 580 L846 476 Q846 468 839 462 L526 216 Q520 212 514 213 Z"/>
+ <!-- Lower independent plane -->
+ <path fill="url(#top)" d="M500 884 L846 668 L846 773 Q846 782 838 788 L519 1012 Q500 1021 500 1001 Z"/>
+ <!-- Inner reconstruction plane -->
+ <path fill="url(#mid)" d="M538 532 Q522 531 522 549 L522 710 Q522 727 538 726 L636 670 L636 566 Z"/>
+ <!-- Central verified pixel -->
+ <rect x="789" y="592" width="59" height="63" rx="5" fill="#FFFFFF" filter="url(#glow)"/>
+</g>
+</svg>

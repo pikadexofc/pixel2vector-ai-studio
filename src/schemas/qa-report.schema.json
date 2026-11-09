@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pixelperfect.studio/schemas/qa-report.schema.json",
+  "title": "Visual QA Report",
+  "type": "object",
+  "required": [
+    "qa_id",
+    "reference",
+    "render",
+    "environment",
+    "comparison",
+    "passes",
+    "defects",
+    "status"
+  ],
+  "properties": {
+    "qa_id": {
+      "type": "string"
+    },
+    "reference": {
+      "type": "object",
+      "required": [
+        "sha256",
+        "width_px",
+        "height_px"
+      ],
+      "properties": {
+        "sha256": {
+          "type": "string"
+        },
+        "width_px": {
+          "type": "integer"
+        },
+        "height_px": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": true
+    },
+    "render": {
+      "type": "object",
+      "required": [
+        "sha256",
+        "width_px",
+        "height_px"
+      ],
+      "properties": {
+        "sha256": {
+          "type": "string"
+        },
+        "width_px": {
+          "type": "integer"
+        },
+        "height_px": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": true
+    },
+    "environment": {
+      "type": "object",
+      "required": [
+        "browser",
+        "version",
+        "device_scale_factor"
+      ],
+      "properties": {
+        "browser": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "device_scale_factor": {
+          "type": "number"
+        },
+        "fonts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "comparison": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "pixel_threshold",
+        "mismatch_ratio"
+      ],
+      "properties": {
+        "algorithm": {
+          "type": "string"
+        },
+        "pixel_threshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "mismatch_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ssim": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "difference_map": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "passes": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "structural",
+          "fidelity",
+          "finishing"
+        ]
+      }
+    },
+    "defects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "severity",
+          "status",
+          "description"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "critical",
+              "major",
+              "minor",
+              "info"
+            ]
+          },
+          "status": {
+            "enum": [
+              "open",
+              "fixed",
+              "accepted",
+              "deferred"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "layer_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "PASS_WITH_EXCEPTIONS",
+        "FAIL",
+        "BLOCKED"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

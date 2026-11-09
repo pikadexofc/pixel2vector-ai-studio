@@ -1,0 +1,250 @@
+{
+  "manifest_version": "1.0.0",
+  "project_id": "ATN-2026-001",
+  "canvas": {
+    "width": 1536,
+    "height": 569,
+    "units": "px",
+    "background": "#E9E7E1"
+  },
+  "coordinate_origin": "top-left",
+  "layers": [
+    {
+      "id": "L01",
+      "name": "Warm paper base and grain",
+      "method": "CODE",
+      "bbox": [
+        0,
+        0,
+        1536,
+        569
+      ],
+      "z": 1,
+      "status": "frozen",
+      "evidence": "R02"
+    },
+    {
+      "id": "L02",
+      "name": "Violet geometric fields",
+      "method": "SVG",
+      "bbox": [
+        0,
+        0,
+        1536,
+        569
+      ],
+      "z": 5,
+      "status": "frozen",
+      "evidence": "R10"
+    },
+    {
+      "id": "L03",
+      "name": "Black torn-paper field",
+      "method": "SVG",
+      "bbox": [
+        0,
+        0,
+        938,
+        521
+      ],
+      "z": 3,
+      "status": "frozen",
+      "evidence": "R03"
+    },
+    {
+      "id": "L04",
+      "name": "Upper and lower torn paper edges",
+      "method": "SOURCE",
+      "asset": "top_left_paper_tear.png; bottom_left_paper_tear.png",
+      "bbox": [
+        0,
+        0,
+        278,
+        569
+      ],
+      "z": 4,
+      "status": "frozen",
+      "evidence": "R02"
+    },
+    {
+      "id": "L05",
+      "name": "Right concrete support",
+      "method": "SOURCE",
+      "asset": "right_support_column.png",
+      "bbox": [
+        936,
+        151,
+        1083,
+        410
+      ],
+      "z": 6,
+      "status": "frozen",
+      "evidence": "R07"
+    },
+    {
+      "id": "L06",
+      "name": "Upper diagonal concrete beam",
+      "method": "SOURCE",
+      "asset": "concrete_diagonal_beam.png",
+      "bbox": [
+        232,
+        0,
+        938,
+        402
+      ],
+      "z": 7,
+      "status": "frozen",
+      "evidence": "R06"
+    },
+    {
+      "id": "L07",
+      "name": "Upper right concrete arch",
+      "method": "SOURCE",
+      "asset": "right_upper_arch.png",
+      "bbox": [
+        936,
+        131,
+        1495,
+        410
+      ],
+      "z": 8,
+      "status": "frozen",
+      "evidence": "R07"
+    },
+    {
+      "id": "L08",
+      "name": "Outer right concrete upright",
+      "method": "SOURCE",
+      "asset": "right_outer_pillar.png",
+      "bbox": [
+        1437,
+        131,
+        1536,
+        458
+      ],
+      "z": 9,
+      "status": "frozen",
+      "evidence": "R07"
+    },
+    {
+      "id": "L09",
+      "name": "Staircase",
+      "method": "SOURCE",
+      "asset": "staircase.png",
+      "bbox": [
+        1027,
+        381,
+        1536,
+        569
+      ],
+      "z": 10,
+      "status": "frozen",
+      "evidence": "R08"
+    },
+    {
+      "id": "L10",
+      "name": "Foreground concrete beam",
+      "method": "SOURCE",
+      "asset": "foreground_concrete_beam.png",
+      "bbox": [
+        277,
+        382,
+        1038,
+        550
+      ],
+      "z": 11,
+      "status": "frozen",
+      "evidence": "R09"
+    },
+    {
+      "id": "L11",
+      "name": "Right lower concrete face",
+      "method": "SOURCE",
+      "asset": "lower_right_concrete_face.png",
+      "bbox": [
+        1017,
+        381,
+        1132,
+        474
+      ],
+      "z": 12,
+      "status": "frozen",
+      "evidence": "R07"
+    },
+    {
+      "id": "L12",
+      "name": "Technical arcs and drafting grid",
+      "method": "SVG",
+      "bbox": [
+        0,
+        0,
+        1536,
+        569
+      ],
+      "z": 13,
+      "status": "frozen",
+      "evidence": "R11"
+    },
+    {
+      "id": "L13",
+      "name": "Headline AFTER THE NOISE.",
+      "method": "TYPOGRAPHY",
+      "bbox": [
+        112,
+        175,
+        728,
+        352
+      ],
+      "z": 14,
+      "status": "frozen",
+      "evidence": "R04"
+    },
+    {
+      "id": "L14",
+      "name": "Subtitle THE HOURS ARE MINE AGAIN",
+      "method": "TYPOGRAPHY",
+      "bbox": [
+        117,
+        371,
+        654,
+        395
+      ],
+      "z": 15,
+      "status": "frozen",
+      "evidence": "R05"
+    },
+    {
+      "id": "L15",
+      "name": "Yellow underline",
+      "method": "SVG",
+      "bbox": [
+        117,
+        414,
+        170,
+        419
+      ],
+      "z": 16,
+      "status": "frozen",
+      "evidence": "R11"
+    },
+    {
+      "id": "L16",
+      "name": "Edge distress and paper speckles",
+      "method": "CODE",
+      "bbox": [
+        0,
+        0,
+        1536,
+        569
+      ],
+      "z": 17,
+      "status": "frozen",
+      "evidence": "R02"
+    }
+  ],
+  "notes": [
+    "Source-derived architectural fragments are isolated masked crops from the supplied reference.",
+    "Headline and subtitle are live text, not raster text.",
+    "Typography candidates are estimates and should be replaced when exact font files are known."
+  ]
+}

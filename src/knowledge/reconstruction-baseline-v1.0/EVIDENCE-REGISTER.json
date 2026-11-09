@@ -1,0 +1,126 @@
+{
+  "archive_version": "1.0.0",
+  "created_at": "2026-11-03",
+  "evidence_inventory": [
+    {
+      "path": "DEFECT-AND-CORRECTION-REGISTER.md",
+      "bytes": 3980,
+      "sha256": "68f45da6f86a93c5bf3b07e8073a02186355342d6c5a787aa0dddbf6713f9359"
+    },
+    {
+      "path": "LEARNINGS-AND-FIXES.md",
+      "bytes": 20307,
+      "sha256": "a3451b8a8e75bbddb81773e1c0d4830ac226b26180fdf128acb52736f0f07c9c"
+    },
+    {
+      "path": "OPERATING-RULES.md",
+      "bytes": 4433,
+      "sha256": "352d60ed0f7eb1c11c81fa4907b0d8a7f3d9df13bbcb5b8e7dfd3a769ec6a860"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1755,
+      "sha256": "b96b43b3b291296b7e15e1bf8dbfc011fbc0bbdaf75f5fda7df26a5a7ab73d05"
+    },
+    {
+      "path": "STRUCTURED-LEARNING.json",
+      "bytes": 7894,
+      "sha256": "03e82ec5abc3064fea33422915f366f9aeb319aa2bbe916f22e8f7c78c5e1b29"
+    },
+    {
+      "path": "evidence/after-the-noise/README.md",
+      "bytes": 886,
+      "sha256": "8c6ab6c973af365c72d3cfb30689169cd3b32dc1e5fe9a442940a59fc032bd7e"
+    },
+    {
+      "path": "evidence/after-the-noise/after_noise_build_log.json",
+      "bytes": 9287,
+      "sha256": "5cbf4bc6ef3fd9536813bbb0e18e2951ea3071589b7a0687951fdce694923f1a"
+    },
+    {
+      "path": "evidence/after-the-noise/analysis.json",
+      "bytes": 4551,
+      "sha256": "355b357d68b07448f09a9331d8954936ef529897b5b5c51870da2746bc48ad64"
+    },
+    {
+      "path": "evidence/after-the-noise/asset-register.json",
+      "bytes": 6503,
+      "sha256": "1e0312641df6ab59022c48dcd4b63c9f4d8fbbfd25b668d988fdde2faa5ad7ef"
+    },
+    {
+      "path": "evidence/after-the-noise/layer-manifest.json",
+      "bytes": 4709,
+      "sha256": "71adad97f34785bd5c0de96d0f1e54112d287fb00905e12368187310f7f4eaf6"
+    },
+    {
+      "path": "evidence/after-the-noise/qa-report.json",
+      "bytes": 6377,
+      "sha256": "62fe7b2b42efa0cae43b872183eda1c5df09a764867798422084987fc0854e3f"
+    },
+    {
+      "path": "evidence/after-the-noise/stage-ledger.json",
+      "bytes": 2145,
+      "sha256": "c7214a62db3c96a725eac84508fb1c9ad7a39243e655f0b6cba13e1015c320b4"
+    },
+    {
+      "path": "evidence/legal-workflow/pixelperfect-workflow.json",
+      "bytes": 24368,
+      "sha256": "de53073f5b69effc1f1f1d070c661afd052a846a57512a6aee25fff048027914"
+    },
+    {
+      "path": "evidence/subpilot/README.md",
+      "bytes": 1327,
+      "sha256": "5ff778c2b1d44da650cae862857ca1130545dd11ca0d13ea855b10cfda162cce"
+    },
+    {
+      "path": "evidence/subpilot/analysis.json",
+      "bytes": 1681,
+      "sha256": "58bd96fc7aae6753089028b86d93d9d21bc0844fab0f8756cc1668143e3ebd43"
+    },
+    {
+      "path": "evidence/subpilot/asset-register.json",
+      "bytes": 551,
+      "sha256": "66d3d021b37d8b0da10e4189c70444f8784e02796634a14fc3c3e368fd3076fe"
+    },
+    {
+      "path": "evidence/subpilot/layer-manifest.json",
+      "bytes": 10232,
+      "sha256": "1b6103126b53e89c08dedf2d087afc7b90046922076ae19838a4cb6c2ea49fbe"
+    },
+    {
+      "path": "evidence/subpilot/qa-report.json",
+      "bytes": 6202,
+      "sha256": "b13eb718b1507eae7f60aed88e3bc2364cfdd50aa337b789782cdbdceb8e836f"
+    }
+  ],
+  "derived_checks": {
+    "subpilot_manifest_layers": 22,
+    "subpilot_qa_status": "FIRST_PASS_RENDERED_NOT_PIXEL_VERIFIED",
+    "subpilot_similarity_metrics": {
+      "ssim": null,
+      "lpips": null,
+      "pixel_mismatch_ratio": null,
+      "reason": "No numerical full-frame similarity comparison was run."
+    },
+    "after_noise_manifest_layers": 16,
+    "after_noise_readme_claims_14_layers": true,
+    "after_noise_readme_manifest_count_mismatch": true,
+    "after_noise_qa_metrics": {
+      "difference_map": "difference-map.png",
+      "threshold_map": "threshold-diff.png",
+      "pixel_rgb_euclidean_threshold": 24,
+      "mismatch_ratio": 0.16720214557703575,
+      "mean_absolute_error_rgb": 24.813236236572266,
+      "ssim": 0.7280747028234688,
+      "interpretation": "Metrics are diagnostic only. Source-derived image fragments improve texture fidelity, while text, vector masks, colors and traced edges remain approximate."
+    },
+    "legal_workflow_recorded_review_passes": 3,
+    "legal_workflow_recorded_numerical_similarity": false,
+    "legal_workflow_recorded_layer_id_match": true
+  },
+  "confidence_notes": [
+    "The legal workflow was supplied as a JSON execution record; its internal claims are source-recorded and not independently rerun in this archive build.",
+    "SubPilot and After the Noise analysis/manifests/QA reports were directly inspected from the available project files.",
+    "Interactive correction history is classified separately from automated artifact evidence."
+  ]
+}

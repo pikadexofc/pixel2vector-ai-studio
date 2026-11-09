@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "manifest-example-001",
+  "project_id": "project-example-001",
+  "version": 1,
+  "status": "draft",
+  "canvas": {
+    "width_px": 1200,
+    "height_px": 1500,
+    "background": "#111820"
+  },
+  "coordinate_system": "top-left-origin-pixels",
+  "layers": [
+    {
+      "id": "background",
+      "name": "Background",
+      "type": "background",
+      "bbox_px": {
+        "x_min": 0,
+        "y_min": 0,
+        "x_max": 1200,
+        "y_max": 1500
+      },
+      "z_index": 0,
+      "visible": true,
+      "opacity": 1,
+      "blend_mode": "normal",
+      "method": "CODE",
+      "asset_id": null,
+      "notes": []
+    },
+    {
+      "id": "title",
+      "name": "Main title",
+      "type": "text",
+      "bbox_px": {
+        "x_min": 80,
+        "y_min": 90,
+        "x_max": 1120,
+        "y_max": 260
+      },
+      "z_index": 10,
+      "visible": true,
+      "opacity": 1,
+      "blend_mode": "normal",
+      "method": "TYPOGRAPHY",
+      "asset_id": null,
+      "content": "EXAMPLE TITLE",
+      "typography": {
+        "font_family_candidates": [
+          "Candidate A",
+          "Candidate B"
+        ],
+        "font_size_px": 104,
+        "font_weight": 800,
+        "line_height": 0.95,
+        "letter_spacing_px": -2,
+        "alignment": "center"
+      },
+      "confidence": 0.92,
+      "notes": [
+        "Font family remains a ranked candidate, not a confirmed identity"
+      ]
+    }
+  ],
+  "assets": [],
+  "provenance": {
+    "analysis_id": "analysis-example-001",
+    "source_reference": "reference.png"
+  },
+  "source": {
+    "filename": "reference.png",
+    "supplied_filename": "reference.png",
+    "detected_format": "PNG",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "byte_size": 384000,
+    "width_px": 1200,
+    "height_px": 1500,
+    "mode": "RGB",
+    "exif_orientation": 1,
+    "icc_profile_sha256": null,
+    "normalized_width_px": 1200,
+    "normalized_height_px": 1500,
+    "exif_orientation_transform": null
+  }
+}

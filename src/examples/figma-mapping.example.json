@@ -1,0 +1,29 @@
+{
+  "mapping_id": "figma-map-example-001",
+  "project_id": "project-example-001",
+  "source_manifest_id": "manifest-example-001",
+  "target_file_key": "figma-file-key-from-authorized-connector",
+  "target_file_url": null,
+  "tool_version": null,
+  "mappings": [
+    {
+      "layer_id": "background",
+      "figma_node_id": "1:2",
+      "status": "exact",
+      "property_notes": [
+        "Frame bounds match target canvas"
+      ],
+      "last_validated_at": null
+    },
+    {
+      "layer_id": "title",
+      "figma_node_id": "1:3",
+      "status": "approximated",
+      "property_notes": [
+        "Font family requires manual confirmation"
+      ],
+      "last_validated_at": null
+    }
+  ],
+  "validation_status": "NOT_RUN"
+}

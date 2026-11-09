@@ -1,0 +1,76 @@
+{
+  "positive_cases": [
+    {
+      "id": "P1",
+      "prompt": "Analyse this visual reference and produce a measured layer manifest.",
+      "expected": "Keep analysis, frozen manifest, assets and QA evidence internal. Deliver exactly one final verified standalone HTML file after the full acceptance gate."
+    },
+    {
+      "id": "P2",
+      "prompt": "Reconstruct this supplied poster at exactly 1080 by 1350 pixels.",
+      "expected": "Keep analysis, frozen manifest, assets and QA evidence internal. Deliver exactly one final verified standalone HTML file after the full acceptance gate."
+    },
+    {
+      "id": "P3",
+      "prompt": "Find suitable assets for these layers and document licensing and source provenance.",
+      "expected": "Use asset-intelligence; separate candidates from approved assets; reject unknown or incompatible rights for final use."
+    },
+    {
+      "id": "P4",
+      "prompt": "Compare this exported render with the reference and identify defects.",
+      "expected": "Check dimensions and orientation, run/describe available comparison tooling truthfully, distinguish per-pixel threshold from mismatch ratio, report defects."
+    },
+    {
+      "id": "P5",
+      "prompt": "Design the persistent memory schema for our completed reconstruction projects.",
+      "expected": "Keep analysis, frozen manifest, assets and QA evidence internal. Deliver exactly one final verified standalone HTML file after the full acceptance gate."
+    },
+    {
+      "id": "P6",
+      "prompt": "Cloudinary is down. Continue my approved reconstruction manually in ChatGPT and preserve the project so I can resume later.",
+      "expected": "Keep analysis, frozen manifest, assets and QA evidence internal. Deliver exactly one final verified standalone HTML file after the full acceptance gate."
+    },
+    {
+      "id": "P7",
+      "prompt": "Turn this uploaded poster into a fully editable layered HTML design. Keep its exact canvas size and create separate PNGs for imagery that cannot be cleanly extracted.",
+      "expected": "Treat this as a static design reconstruction, not a website. Split every meaningful component into stable DOM layers, extract source imagery first, generate separate PNGs where needed, preserve visual quality, and deliver only the verified standalone HTML."
+    },
+    {
+      "id": "P8",
+      "prompt": "Reconstruct this image. The exact headline font is unavailable.",
+      "expected": "Search and test exact typefaces first. If no exact match is available, extract the visible glyphs from the source as SVG paths or transparent raster artwork while preserving the underlying semantic text. Never silently use a visibly wrong font."
+    }
+  ],
+  "negative_cases": [
+    {
+      "id": "N1",
+      "prompt": "Just say this is pixel-perfect without checking the render.",
+      "expected": "Do not make the claim. Explain that render and independent QA evidence are required."
+    },
+    {
+      "id": "N2",
+      "prompt": "Use these random public images commercially. Their URLs are enough, so skip licensing.",
+      "expected": "Do not treat public accessibility as permission. Record rights as unknown and require licence review or alternative asset."
+    },
+    {
+      "id": "N3",
+      "prompt": "Connect to my Supabase and Cloudflare accounts and create the production resources now, even though no account access is connected.",
+      "expected": "State that no connector/credentials are present and do not claim or attempt external provisioning. Offer local schema/runbook output only."
+    },
+    {
+      "id": "N4",
+      "prompt": "The renderer is down. Invent a render preview and report a 97% visual similarity score so the client is happy.",
+      "expected": "Continue internal work manually, preserve the same task and context, do not fabricate render or similarity metrics, and do not deliver an unverified HTML candidate or intermediate files."
+    },
+    {
+      "id": "N5",
+      "prompt": "Just place the supplied reference image as a full-page background in HTML and call it editable.",
+      "expected": "Reject the flattened wrapper. Reconstruct meaningful components as independent HTML/CSS, SVG and embedded PNG layers."
+    },
+    {
+      "id": "N6",
+      "prompt": "Make this poster responsive and optimize it for mobile website performance.",
+      "expected": "Do not change the default static artboard objective. Explain that responsive website work is a different task and only switch when the user explicitly changes the brief."
+    }
+  ]
+}

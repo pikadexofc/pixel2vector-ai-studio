@@ -1,0 +1,147 @@
+{
+  "qa_id": "qa-verified-example-001",
+  "reference": {
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "width_px": 1200,
+    "height_px": 800,
+    "detected_format": "PNG"
+  },
+  "render": {
+    "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "width_px": 1200,
+    "height_px": 800,
+    "detected_format": "PNG"
+  },
+  "environment": {
+    "browser": "Chromium",
+    "version": "123.0.0.0",
+    "device_scale_factor": 1,
+    "fonts": [
+      "Embedded exact font or source-derived SVG glyph artwork"
+    ]
+  },
+  "comparison": {
+    "algorithm": "rgb-max-channel-mismatch+rgb-mae+ssim",
+    "algorithm_version": "numpy-2.x;scikit-image-0.x;ssim-win7",
+    "preprocessing": "EXIF normalized, sRGB RGB, native dimensions, no resampling",
+    "mismatch_ratio": 0.012,
+    "mae": 1.8,
+    "ssim": 0.992,
+    "acceptance_thresholds": {
+      "profile_id": "diagnostic-only",
+      "calibration_status": "diagnostic_only",
+      "source": "diagnostic_only"
+    },
+    "region_metrics": [
+      {
+        "region": "headline",
+        "status": "pass",
+        "mismatch_ratio": 0.006
+      },
+      {
+        "region": "primary imagery",
+        "status": "pass",
+        "ssim": 0.991
+      }
+    ],
+    "pixel_threshold_rgb": 24
+  },
+  "passes": [
+    "structural",
+    "fidelity",
+    "finishing"
+  ],
+  "defects": [],
+  "delivery": {
+    "filename": "final.html",
+    "html_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "standalone": true,
+    "external_dependencies": [],
+    "manifest_layer_ids_match": true,
+    "assets_loaded": true,
+    "fonts_loaded": true,
+    "critical_text_checked": true,
+    "canvas_overflow": false,
+    "console_error_count": 0,
+    "critical_regions": [
+      {
+        "name": "main headline",
+        "status": "pass",
+        "evidence": "native-size visual comparison"
+      },
+      {
+        "name": "primary subject",
+        "status": "pass",
+        "evidence": "native-size visual comparison"
+      }
+    ],
+    "layer_geometry_checked": true,
+    "z_order_checked": true,
+    "reference_bounds_checked": true,
+    "asset_hashes_verified": true,
+    "network_request_count": 0,
+    "rendered_artboard": {
+      "x_px": 0,
+      "y_px": 0,
+      "width_px": 1200,
+      "height_px": 800
+    },
+    "layer_geometry": [
+      {
+        "id": "background",
+        "x_px": 0,
+        "y_px": 0,
+        "width_px": 1200,
+        "height_px": 800,
+        "status": "pass"
+      },
+      {
+        "id": "headline",
+        "x_px": 80,
+        "y_px": 90,
+        "width_px": 1040,
+        "height_px": 170,
+        "status": "pass"
+      }
+    ],
+    "layer_stack": [
+      {
+        "id": "background",
+        "z_index": 0,
+        "status": "pass"
+      },
+      {
+        "id": "headline",
+        "z_index": 30,
+        "status": "pass"
+      }
+    ],
+    "asset_loads": [],
+    "font_checks": [],
+    "critical_text_checks": [
+      {
+        "layer_id": "headline",
+        "expected_text": "EXAMPLE TITLE",
+        "actual_text": "EXAMPLE TITLE",
+        "status": "pass"
+      }
+    ]
+  },
+  "status": "PASS",
+  "visual_review": {
+    "status": "PASS",
+    "method": "direct_visual_inspection",
+    "reviewer": "example-only-placeholder",
+    "reference_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "render_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "passes": [
+      "structural",
+      "fidelity",
+      "finishing"
+    ],
+    "critical_regions_reviewed": [
+      "main headline",
+      "primary subject"
+    ]
+  }
+}

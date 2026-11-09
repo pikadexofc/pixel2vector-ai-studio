@@ -1,0 +1,129 @@
+{
+  "knowledge_pack": {
+    "name": "PixelPerfect Studio Learning Archive",
+    "version": "1.0.0",
+    "recorded_at": "2026-11-03",
+    "status": "documented_not_integrated",
+    "evidence_policy": ["ARTIFACT_VERIFIED", "SOURCE_RECORDED", "CONVERSATION_REPORTED", "INFERENCE", "OPEN"]
+  },
+  "projects": [
+    {
+      "project_id": "LEGAL-COVER-WF-2026-11-03",
+      "name": "Legal Systems in Transition cover workflow",
+      "evidence_class": "SOURCE_RECORDED",
+      "canvas": {"width": 1536, "height": 864, "format_reported": "JPEG", "mode": "RGB"},
+      "recorded_results": {
+        "layer_count": 35,
+        "manifest_html_layer_ids_exact_match": true,
+        "embedded_image_data_uris": 3,
+        "embedded_font_data_uris": 4,
+        "external_runtime_dependencies": 0,
+        "javascript_required": false,
+        "visual_review_passes": 3,
+        "numerical_similarity_metrics": false
+      },
+      "important_limitations": [
+        "QA was based on rendered screenshots.",
+        "No numerical SSIM, MAE or pixel-difference score was claimed.",
+        "Generated photographic subjects approximate pictured objects rather than extracting their original pixels."
+      ],
+      "evidence_file": "evidence/legal-workflow/pixelperfect-workflow.json"
+    },
+    {
+      "project_id": "SUBPILOT-POSTER-001",
+      "name": "SubPilot promotional poster",
+      "evidence_class": "ARTIFACT_VERIFIED",
+      "canvas": {"width": 1536, "height": 1536, "format": "JPEG", "mode": "RGB"},
+      "results": {
+        "manifest_layer_count": 22,
+        "render_dimensions": [1536, 1536],
+        "renderer": "Chromium via Playwright",
+        "viewport_checks": [[1536,1536],[768,768],[390,390]],
+        "console_errors": 0,
+        "headline_and_cta_containment": true,
+        "qr_crop_loaded": true,
+        "qr_payload_decoded": false,
+        "numerical_similarity_metrics": null,
+        "qa_status": "FIRST_PASS_RENDERED_NOT_PIXEL_VERIFIED"
+      },
+      "known_defects": [
+        "Exact display and logo font identities unknown.",
+        "Paper grain, distress and halftone are procedural approximations.",
+        "Original vector wordmark unavailable; editable typography used.",
+        "Player and speech bubble paths reconstructed, not source-traced.",
+        "QR payload unverified."
+      ],
+      "evidence_files": [
+        "evidence/subpilot/analysis.json",
+        "evidence/subpilot/layer-manifest.json",
+        "evidence/subpilot/qa-report.json",
+        "evidence/subpilot/asset-register.json"
+      ]
+    },
+    {
+      "project_id": "ATN-2026-001",
+      "name": "After the Noise panoramic banner",
+      "evidence_class": "ARTIFACT_VERIFIED",
+      "canvas": {"width":1536,"height":569,"detected_format":"JPEG","supplied_filename":"1000154722.png","mode":"RGB"},
+      "source_sha256": "1d9b0fda4d1c6972c7718574d40a891347c255d3d294d486cf75dedcc79a3a5c",
+      "results": {
+        "manifest_layer_count": 16,
+        "asset_count": 9,
+        "render_dimensions": [1536,569],
+        "renderer": "Chromium via Playwright",
+        "assets_loaded": 9,
+        "mobile_390_horizontal_overflow": false,
+        "per_pixel_rgb_euclidean_threshold": 24,
+        "pixel_mismatch_ratio": 0.16720214557703575,
+        "mean_absolute_error_rgb": 24.813236236572266,
+        "ssim": 0.7280747028234688,
+        "qa_status": "first-render-reviewed",
+        "perceptual_comparison_status": "REVIEW"
+      },
+      "known_defects": [
+        "Headline typeface approximate.",
+        "Hand-traced architectural masks may need edge refinement.",
+        "Fine technical texture remains approximate.",
+        "Responsive scaling exists but no alternate mobile composition exists."
+      ],
+      "documentation_defect": {
+        "readme_layer_count": 14,
+        "manifest_layer_count": 16,
+        "authoritative_count": 16,
+        "resolution": "Use manifest as source of truth; generate README count and validator output from manifest."
+      },
+      "evidence_files": [
+        "evidence/after-the-noise/analysis.json",
+        "evidence/after-the-noise/asset-register.json",
+        "evidence/after-the-noise/layer-manifest.json",
+        "evidence/after-the-noise/qa-report.json",
+        "evidence/after-the-noise/stage-ledger.json",
+        "evidence/after-the-noise/after_noise_build_log.json"
+      ]
+    }
+  ],
+  "rules": [
+    {"id":"PP-R001","priority":"P0","rule":"Preserve the exact native artboard dimensions and top-left pixel coordinate system.","basis":["legal workflow","SubPilot","After the Noise"]},
+    {"id":"PP-R002","priority":"P0","rule":"Use a synchronized, stable-ID layer manifest as the source of truth for HTML/SVG layers and documentation counts.","basis":["legal workflow 35-to-35 match","After the Noise 14-vs-16 defect"]},
+    {"id":"PP-R003","priority":"P0","rule":"Search for the exact typeface first; if unavailable or visually wrong, extract the visible letterforms from the reference and preserve them as source-derived glyph artwork/SVG where practical.","basis":["user directive","SubPilot limitations","After the Noise limitations"]},
+    {"id":"PP-R004","priority":"P0","rule":"For elements already present in the source reference, attempt source extraction and masking before generating replacements.","basis":["After the Noise nine source-derived assets","legal workflow independent generated assets"]},
+    {"id":"PP-R005","priority":"P0","rule":"Assign each layer exactly one primary production method: SOURCE, GENERATE, CODE, SVG or TYPOGRAPHY.","basis":["legal workflow","poster manifests"]},
+    {"id":"PP-R006","priority":"P0","rule":"Scope CSS rules and declare explicit per-layer coordinates and z-index; validate computed browser bounds after rendering.","basis":["After the Noise build corrections"]},
+    {"id":"PP-R007","priority":"P0","rule":"Separate render, structural QA, visual review, numerical evaluation and fidelity acceptance statuses.","basis":["all three QA artifacts"]},
+    {"id":"PP-R008","priority":"P0","rule":"Run three review passes: structure, styling and fidelity/finishing, and retain defect records.","basis":["legal workflow","SubPilot QA"]},
+    {"id":"PP-R009","priority":"P1","rule":"Run difference-map analysis and report mismatch ratio separately from colour threshold, plus MAE and SSIM with implementation settings.","basis":["After the Noise QA"]},
+    {"id":"PP-R010","priority":"P1","rule":"Maintain asset provenance: source hash, source bounds or generation prompt, transform, output hash, dimensions, rights status and QA state.","basis":["legal workflow","After the Noise asset register"]},
+    {"id":"PP-R011","priority":"P1","rule":"Detect file format from bytes, not filename extension.","basis":["After the Noise supplied filename .png, detected JPEG"]},
+    {"id":"PP-R012","priority":"P1","rule":"Keep offline output self-contained by embedding or packaging all required image and font assets locally when requested.","basis":["legal workflow"]},
+    {"id":"PP-R013","priority":"P1","rule":"Inspect alpha-mask edges, halos, gaps and feathering at native artboard size.","basis":["After the Noise extracted architecture and paper fragments"]},
+    {"id":"PP-R014","priority":"P1","rule":"Use regional QA weights for critical typography, logos and key objects; do not rely on one global score.","basis":["inference from documented global metrics and unresolved typography"]},
+    {"id":"PP-R015","priority":"P1","rule":"Correct the smallest defective layer group, then rerun affected checks and full-frame QA.","basis":["build correction history","deterministic reconstruction policy"]}
+  ],
+  "change_status": {
+    "plugin_modified": false,
+    "skills_updated": false,
+    "schemas_updated": false,
+    "release_packaged": false,
+    "note": "This archive documents learnings and fixes first. Integration is a separate next step requiring explicit review."
+  }
+}

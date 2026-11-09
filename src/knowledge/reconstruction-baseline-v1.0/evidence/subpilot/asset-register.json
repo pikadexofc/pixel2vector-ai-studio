@@ -1,0 +1,19 @@
+{
+  "assets": [
+    {
+      "asset_id": "AST-QR-001",
+      "path": "assets/qr-reference.png",
+      "source_file": "reference-original.jpg",
+      "source_region_xyxy": [
+        1238,
+        1275,
+        1446,
+        1478
+      ],
+      "method": "SOURCE_CROP",
+      "sha256": "16a58ea2f9257e64f06805f115becdd7c35651ba8dbea8bfa95f5c44ab45ab0f",
+      "provenance": "Crop copied from the supplied reference image; no synthetic QR generated.",
+      "validation": "QR image dimensions and load status verified; QR payload not decoded."
+    }
+  ]
+}

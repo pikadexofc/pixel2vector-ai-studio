@@ -1,0 +1,469 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pixelperfect.studio/schemas/layer-manifest.schema.json",
+  "title": "PixelPerfect Layer Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "project_id",
+    "version",
+    "canvas",
+    "coordinate_system",
+    "status",
+    "layers",
+    "source"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "manifest_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "reviewed",
+        "frozen",
+        "superseded"
+      ]
+    },
+    "canvas": {
+      "type": "object",
+      "required": [
+        "width_px",
+        "height_px"
+      ],
+      "properties": {
+        "width_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "background": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "coordinate_system": {
+      "const": "top-left-origin-pixels"
+    },
+    "layers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/layer"
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "asset_id",
+          "sha256"
+        ],
+        "properties": {
+          "asset_id": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{64}$"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "approved_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "supplied_filename",
+        "detected_format",
+        "sha256",
+        "byte_size",
+        "width_px",
+        "height_px",
+        "filename",
+        "normalized_width_px",
+        "normalized_height_px",
+        "mode",
+        "exif_orientation",
+        "icc_profile_sha256",
+        "exif_orientation_transform"
+      ],
+      "properties": {
+        "supplied_filename": {
+          "type": "string",
+          "minLength": 1
+        },
+        "detected_format": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "byte_size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "width_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "mode": {
+          "type": "string"
+        },
+        "exif_orientation": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 8
+        },
+        "icc_profile_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "filename": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalized_width_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "normalized_height_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "exif_orientation_transform": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "bbox": {
+      "type": "object",
+      "required": [
+        "x_min",
+        "y_min",
+        "x_max",
+        "y_max"
+      ],
+      "properties": {
+        "x_min": {
+          "type": "number"
+        },
+        "y_min": {
+          "type": "number"
+        },
+        "x_max": {
+          "type": "number"
+        },
+        "y_max": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "layer": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "type",
+        "bbox_px",
+        "z_index",
+        "visible",
+        "opacity",
+        "blend_mode",
+        "method"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "background",
+            "image",
+            "text",
+            "shape",
+            "svg",
+            "mask",
+            "group",
+            "decoration",
+            "other"
+          ]
+        },
+        "group_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parent_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bbox_px": {
+          "$ref": "#/$defs/bbox"
+        },
+        "z_index": {
+          "type": "integer"
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "opacity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "blend_mode": {
+          "type": "string"
+        },
+        "method": {
+          "enum": [
+            "GENERATE",
+            "SOURCE",
+            "CODE",
+            "SVG",
+            "TYPOGRAPHY"
+          ]
+        },
+        "asset_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "transform": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "crop": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true
+        },
+        "clip": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true
+        },
+        "mask_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "shadow": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true
+        },
+        "gradient": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true
+        },
+        "typography": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "recovery_method": {
+              "enum": [
+                "EXACT_FONT",
+                "SOURCE_GLYPH_RASTER",
+                "SOURCE_GLYPH_SVG",
+                "APPROVED_SUBSTITUTE",
+                "UNKNOWN"
+              ]
+            },
+            "font_family": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "font_verified": {
+              "type": "boolean"
+            },
+            "source_glyph_bbox_px": {
+              "$ref": "#/$defs/bbox"
+            },
+            "font_size_px": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "font_weight": {
+              "type": [
+                "integer",
+                "string"
+              ]
+            },
+            "line_height": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "letter_spacing_px": {
+              "type": "number"
+            },
+            "kerning_notes": {
+              "type": "string"
+            },
+            "baseline_y_px": {
+              "type": "number"
+            },
+            "slant_degrees": {
+              "type": "number"
+            },
+            "distress_preserved": {
+              "type": "boolean"
+            },
+            "semantic_text": {
+              "type": "string"
+            },
+            "font_family_candidates": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": true
+        },
+        "content": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reference_region_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "confidence": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_extraction": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "parent_source_sha256": {
+              "type": "string",
+              "pattern": "^[a-fA-F0-9]{64}$"
+            },
+            "source_bbox_px": {
+              "$ref": "#/$defs/bbox"
+            },
+            "mask_method": {
+              "type": "string"
+            },
+            "antialiasing_scale": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "edge_feather_px": {
+              "type": "number",
+              "minimum": 0
+            },
+            "output_sha256": {
+              "type": "string",
+              "pattern": "^[a-fA-F0-9]{64}$"
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pixelperfect.studio/schemas/figma-mapping.schema.json",
+  "title": "Figma layer mapping",
+  "type": "object",
+  "required": [
+    "mapping_id",
+    "project_id",
+    "source_manifest_id",
+    "target_file_key",
+    "mappings",
+    "validation_status"
+  ],
+  "properties": {
+    "mapping_id": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "source_manifest_id": {
+      "type": "string"
+    },
+    "target_file_key": {
+      "type": "string"
+    },
+    "target_file_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "tool_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "layer_id",
+          "figma_node_id",
+          "status"
+        ],
+        "properties": {
+          "layer_id": {
+            "type": "string"
+          },
+          "figma_node_id": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "exact",
+              "approximated",
+              "unsupported",
+              "not-tested"
+            ]
+          },
+          "property_notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "last_validated_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "validation_status": {
+      "enum": [
+        "PASS",
+        "PASS_WITH_EXCEPTIONS",
+        "FAIL",
+        "NOT_RUN"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
